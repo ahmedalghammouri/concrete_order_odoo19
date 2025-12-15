@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_concrete_order_root"
+              name="Concrete Order"
+              sequence="10"/>
+
+    <!-- Delivery Tickets Menu -->
+    <menuitem id="menu_concrete_delivery_ticket"
+              name="Delivery Tickets"
+              parent="menu_concrete_order_root"
+              action="action_concrete_delivery_ticket"
+              sequence="10"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_concrete_configuration"
+              name="Configuration"
+              parent="menu_concrete_order_root"
+              sequence="100"/>
+
+    <!-- Excel Templates Menu -->
+    <menuitem id="menu_excel_template"
+              name="Excel Templates"
+              parent="menu_concrete_configuration"
+              action="action_excel_template"
+              sequence="10"/>
+
+    <!-- Field Mappings Menu -->
+    <menuitem id="menu_excel_field_mapping"
+              name="Field Mappings"
+              parent="menu_concrete_configuration"
+              action="action_excel_field_mapping"
+              sequence="20"/>
+</odoo>

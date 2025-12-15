@@ -1,0 +1,2183 @@
+=== BEFORE TEMPLATE (CDT00006) ===
+{
+  "version": "18.5.10",
+  "sheets": [
+    {
+      "id": "Manufacturing Work Order",
+      "name": "Manufacturing Delivery Tickets",
+      "colNumber": 30,
+      "rowNumber": 72,
+      "rows": {
+        "0": {
+          "size": 21
+        },
+        "1": {
+          "size": 11
+        },
+        "2": {
+          "size": 46
+        },
+        "3": {
+          "size": 45
+        },
+        "4": {
+          "size": 11
+        },
+        "5": {
+          "size": 20
+        },
+        "6": {
+          "size": 20
+        },
+        "7": {
+          "size": 22
+        },
+        "8": {
+          "size": 16
+        },
+        "9": {
+          "size": 22
+        },
+        "10": {
+          "size": 16
+        },
+        "11": {
+          "size": 22
+        },
+        "12": {
+          "size": 16
+        },
+        "13": {
+          "size": 22
+        },
+        "14": {
+          "size": 20
+        },
+        "15": {
+          "size": 20
+        },
+        "16": {
+          "size": 13
+        },
+        "17": {
+          "size": 20
+        },
+        "18": {
+          "size": 18
+        },
+        "19": {
+          "size": 26
+        },
+        "20": {
+          "size": 18
+        },
+        "21": {
+          "size": 18
+        },
+        "22": {
+          "size": 18
+        },
+        "23": {
+          "size": 19
+        },
+        "24": {
+          "size": 34
+        },
+        "25": {
+          "size": 18
+        },
+        "26": {
+          "size": 18
+        },
+        "27": {
+          "size": 18
+        },
+        "28": {
+          "size": 18
+        },
+        "29": {
+          "size": 18
+        },
+        "30": {
+          "size": 18
+        },
+        "31": {
+          "size": 18
+        },
+        "32": {
+          "size": 18
+        },
+        "33": {
+          "size": 18
+        },
+        "34": {
+          "size": 18
+        },
+        "35": {
+          "size": 18
+        },
+        "36": {
+          "size": 18
+        },
+        "37": {
+          "size": 18
+        },
+        "38": {
+          "size": 18
+        },
+        "39": {
+          "size": 18
+        },
+        "40": {
+          "size": 18
+        },
+        "41": {
+          "size": 18
+        },
+        "42": {
+          "size": 18
+        },
+        "43": {
+          "size": 18
+        },
+        "44": {
+          "size": 18
+        },
+        "45": {
+          "size": 18
+        },
+        "46": {
+          "size": 18
+        },
+        "47": {
+          "size": 18
+        },
+        "48": {
+          "size": 18
+        },
+        "49": {
+          "size": 18
+        },
+        "50": {
+          "size": 18
+        },
+        "51": {
+          "size": 18
+        },
+        "52": {
+          "size": 18
+        },
+        "53": {
+          "size": 18
+        },
+        "54": {
+          "size": 18
+        },
+        "55": {
+          "size": 18
+        },
+        "56": {
+          "size": 18
+        },
+        "57": {
+          "size": 18
+        },
+        "58": {
+          "size": 18
+        },
+        "59": {
+          "size": 18
+        },
+        "60": {
+          "size": 18
+        },
+        "61": {
+          "size": 18
+        },
+        "62": {
+          "size": 18
+        },
+        "63": {
+          "size": 18
+        },
+        "64": {
+          "size": 18
+        },
+        "65": {
+          "size": 18
+        },
+        "66": {
+          "size": 18
+        },
+        "67": {
+          "size": 18
+        },
+        "68": {
+          "size": 18
+        },
+        "69": {
+          "size": 18
+        },
+        "70": {
+          "size": 18
+        },
+        "71": {
+          "size": 18
+        }
+      },
+      "cols": {
+        "0": {
+          "size": 26
+        },
+        "1": {
+          "size": 16
+        },
+        "2": {
+          "size": 149
+        },
+        "3": {
+          "size": 169
+        },
+        "4": {
+          "size": 16
+        },
+        "5": {
+          "size": 57
+        },
+        "6": {
+          "size": 57
+        },
+        "7": {
+          "size": 81
+        },
+        "8": {
+          "size": 52
+        },
+        "9": {
+          "size": 131
+        },
+        "10": {
+          "size": 16
+        },
+        "11": {
+          "size": 26
+        },
+        "12": {
+          "size": 62
+        },
+        "13": {
+          "size": 62
+        },
+        "14": {
+          "size": 62
+        },
+        "15": {
+          "size": 62
+        },
+        "16": {
+          "size": 62
+        },
+        "17": {
+          "size": 62
+        },
+        "18": {
+          "size": 62
+        },
+        "19": {
+          "size": 62
+        },
+        "20": {
+          "size": 62
+        },
+        "21": {
+          "size": 62
+        },
+        "22": {
+          "size": 62
+        },
+        "23": {
+          "size": 62
+        },
+        "24": {
+          "size": 62
+        },
+        "25": {
+          "size": 62
+        },
+        "26": {
+          "size": 62
+        },
+        "27": {
+          "size": 62
+        },
+        "28": {
+          "size": 62
+        },
+        "29": {
+          "size": 62
+        }
+      },
+      "merges": [
+        "F22:J22",
+        "F23:J23",
+        "F24:J24",
+        "F3:J3",
+        "F4:J4",
+        "C3:E4",
+        "I14:J14",
+        "D14:G14",
+        "F20:J20",
+        "F21:J21",
+        "D8:F8",
+        "H8:J8",
+        "D10:J10",
+        "D12:J12"
+      ],
+      "cells": {
+        "C8": "Order No:",
+        "C10": "Company:",
+        "C12": "Address:",
+        "C14": "Customer Order No.l:",
+        "D8": "WO-12345",
+        "D10": "Golden Gates Co",
+        "D12": "123 Manufacturing St, Industrial City, IC 45678",
+        "D14": "info@goldengates.com",
+        "F3": "MANUFACTURING",
+        "F4": "Delivery Tickets",
+        "F20": "Industrial Manufacturing Co.",
+        "F21": "456 Production Ave, Industrial City, IC 45678",
+        "F22": "info@industrialmfg.com",
+        "F23": "(123) 456-7891",
+        "G8": "Date:",
+        "H8": "45614",
+        "H14": "Driver Name:",
+        "I14": "(555) 123 456 7890"
+      },
+      "styles": {
+        "A1:A18": 1,
+        "B1:C1": 1,
+        "J1:K1": 1,
+        "B16:K16": 1,
+        "L1:L18": 1,
+        "A19:A25": 2,
+        "E1:I1": 2,
+        "B25:K25": 2,
+        "L19:L25": 2,
+        "A26:L72": 3,
+        "M1:AD72": 3,
+        "B9": 4,
+        "B11": 4,
+        "B13": 4,
+        "B15": 4,
+        "B2:C2": 4,
+        "B6:C7": 4,
+        "B17:E18": 4,
+        "F18": 4,
+        "D7:I7": 4,
+        "J2": 4,
+        "J6:J7": 4,
+        "K2:K15": 4,
+        "G17:K18": 4,
+        "B3:D5": 5,
+        "E3:E4": 5,
+        "F17": 5,
+        "B8": 6,
+        "B10": 6,
+        "B12": 6,
+        "B14": 6,
+        "B19:E24": 7,
+        "F19:J19": 7,
+        "K19:K24": 7,
+        "C8": 8,
+        "C10": 8,
+        "C12": 8,
+        "C14": 8,
+        "G8": 8,
+        "H14": 8,
+        "C9": 9,
+        "C11": 9,
+        "C13": 9,
+        "D8:F8": 9,
+        "D14:G14": 9,
+        "H8:J8": 9,
+        "D10:J10": 9,
+        "D12:J12": 9,
+        "I14:J14": 9,
+        "C15:J15": 10,
+        "D1": 11,
+        "D2": 12,
+        "D6": 13,
+        "E5:E6": 13,
+        "E2:I2": 13,
+        "F6:I6": 13,
+        "D9:J9": 14,
+        "D11:J11": 14,
+        "D13:J13": 14,
+        "F3:J3": 15,
+        "F4:J5": 16,
+        "F20:J20": 17,
+        "F21:J23": 18,
+        "F24:J24": 19
+      },
+      "formats": {
+        "H8": 1
+      },
+      "borders": {
+        "D8": 1,
+        "E8": 1,
+        "F8": 1,
+        "H8": 1,
+        "I8": 1,
+        "J8": 1,
+        "D10": 1,
+        "E10": 1,
+        "F10": 1,
+        "G10": 1,
+        "H10": 1,
+        "I10": 1,
+        "J10": 1,
+        "D12": 1,
+        "E12": 1,
+        "F12": 1,
+        "G12": 1,
+        "H12": 1,
+        "I12": 1,
+        "J12": 1,
+        "D14": 2,
+        "E14": 2,
+        "F14": 2,
+        "G14": 2,
+        "I14": 2,
+        "J14": 2
+      },
+      "conditionalFormats": [],
+      "dataValidationRules": [],
+      "figures": [
+        {
+          "id": "1",
+          "col": 2,
+          "row": 18,
+          "offset": {
+            "x": 1,
+            "y": 8
+          },
+          "width": 96,
+          "height": 97,
+          "tag": "image",
+          "data": {
+            "path": "/web/image/1368",
+            "mimetype": "image/png"
+          }
+        },
+        {
+          "id": "2",
+          "col": 2,
+          "row": 2,
+          "offset": {
+            "x": 7,
+            "y": 1
+          },
+          "width": 230,
+          "height": 87,
+          "tag": "image",
+          "data": {
+            "path": "/web/image/1369",
+            "mimetype": "image/png"
+          }
+        }
+      ],
+      "tables": [],
+      "areGridLinesVisible": true,
+      "isVisible": true,
+      "headerGroups": {
+        "ROW": [],
+        "COL": []
+      },
+      "comments": {}
+    },
+    {
+      "id": "\u00a9",
+      "name": "\u00a9",
+      "colNumber": 30,
+      "rowNumber": 100,
+      "rows": {
+        "0": {
+          "size": 19
+        },
+        "1": {
+          "size": 19
+        },
+        "2": {
+          "size": 19
+        },
+        "3": {
+          "size": 19
+        },
+        "4": {
+          "size": 19
+        },
+        "5": {
+          "size": 19
+        },
+        "6": {
+          "size": 19
+        },
+        "7": {
+          "size": 19
+        },
+        "8": {
+          "size": 19
+        },
+        "9": {
+          "size": 19
+        },
+        "10": {
+          "size": 19
+        },
+        "11": {
+          "size": 19
+        },
+        "12": {
+          "size": 19
+        },
+        "13": {
+          "size": 19
+        },
+        "14": {
+          "size": 19
+        },
+        "15": {
+          "size": 19
+        },
+        "16": {
+          "size": 19
+        },
+        "17": {
+          "size": 19
+        },
+        "18": {
+          "size": 19
+        },
+        "19": {
+          "size": 19
+        },
+        "20": {
+          "size": 19
+        },
+        "21": {
+          "size": 19
+        },
+        "22": {
+          "size": 19
+        },
+        "23": {
+          "size": 19
+        },
+        "24": {
+          "size": 19
+        },
+        "25": {
+          "size": 19
+        },
+        "26": {
+          "size": 19
+        },
+        "27": {
+          "size": 19
+        },
+        "28": {
+          "size": 19
+        },
+        "29": {
+          "size": 19
+        },
+        "30": {
+          "size": 19
+        },
+        "31": {
+          "size": 19
+        },
+        "32": {
+          "size": 19
+        },
+        "33": {
+          "size": 19
+        },
+        "34": {
+          "size": 19
+        },
+        "35": {
+          "size": 19
+        },
+        "36": {
+          "size": 19
+        },
+        "37": {
+          "size": 19
+        },
+        "38": {
+          "size": 19
+        },
+        "39": {
+          "size": 19
+        },
+        "40": {
+          "size": 19
+        },
+        "41": {
+          "size": 19
+        },
+        "42": {
+          "size": 19
+        },
+        "43": {
+          "size": 19
+        },
+        "44": {
+          "size": 19
+        },
+        "45": {
+          "size": 19
+        },
+        "46": {
+          "size": 19
+        },
+        "47": {
+          "size": 19
+        },
+        "48": {
+          "size": 19
+        },
+        "49": {
+          "size": 19
+        },
+        "50": {
+          "size": 19
+        },
+        "51": {
+          "size": 19
+        },
+        "52": {
+          "size": 19
+        },
+        "53": {
+          "size": 19
+        },
+        "54": {
+          "size": 19
+        },
+        "55": {
+          "size": 19
+        },
+        "56": {
+          "size": 19
+        },
+        "57": {
+          "size": 19
+        },
+        "58": {
+          "size": 19
+        },
+        "59": {
+          "size": 19
+        },
+        "60": {
+          "size": 19
+        },
+        "61": {
+          "size": 19
+        },
+        "62": {
+          "size": 19
+        },
+        "63": {
+          "size": 19
+        },
+        "64": {
+          "size": 19
+        },
+        "65": {
+          "size": 19
+        },
+        "66": {
+          "size": 19
+        },
+        "67": {
+          "size": 19
+        },
+        "68": {
+          "size": 19
+        },
+        "69": {
+          "size": 19
+        },
+        "70": {
+          "size": 19
+        },
+        "71": {
+          "size": 19
+        },
+        "72": {
+          "size": 19
+        },
+        "73": {
+          "size": 19
+        },
+        "74": {
+          "size": 19
+        },
+        "75": {
+          "size": 19
+        },
+        "76": {
+          "size": 19
+        },
+        "77": {
+          "size": 19
+        },
+        "78": {
+          "size": 19
+        },
+        "79": {
+          "size": 19
+        },
+        "80": {
+          "size": 19
+        },
+        "81": {
+          "size": 19
+        },
+        "82": {
+          "size": 19
+        },
+        "83": {
+          "size": 19
+        },
+        "84": {
+          "size": 19
+        },
+        "85": {
+          "size": 19
+        },
+        "86": {
+          "size": 19
+        },
+        "87": {
+          "size": 19
+        },
+        "88": {
+          "size": 19
+        },
+        "89": {
+          "size": 19
+        },
+        "90": {
+          "size": 19
+        },
+        "91": {
+          "size": 19
+        },
+        "92": {
+          "size": 19
+        },
+        "93": {
+          "size": 19
+        },
+        "94": {
+          "size": 19
+        },
+        "95": {
+          "size": 19
+        },
+        "96": {
+          "size": 19
+        },
+        "97": {
+          "size": 19
+        },
+        "98": {
+          "size": 19
+        },
+        "99": {
+          "size": 19
+        }
+      },
+      "cols": {
+        "0": {
+          "size": 59
+        },
+        "1": {
+          "size": 223
+        },
+        "2": {
+          "size": 59
+        },
+        "3": {
+          "size": 59
+        },
+        "4": {
+          "size": 59
+        },
+        "5": {
+          "size": 59
+        },
+        "6": {
+          "size": 59
+        },
+        "7": {
+          "size": 59
+        },
+        "8": {
+          "size": 59
+        },
+        "9": {
+          "size": 59
+        },
+        "10": {
+          "size": 59
+        },
+        "11": {
+          "size": 59
+        },
+        "12": {
+          "size": 59
+        },
+        "13": {
+          "size": 59
+        },
+        "14": {
+          "size": 59
+        },
+        "15": {
+          "size": 59
+        },
+        "16": {
+          "size": 59
+        },
+        "17": {
+          "size": 59
+        },
+        "18": {
+          "size": 59
+        },
+        "19": {
+          "size": 59
+        },
+        "20": {
+          "size": 59
+        },
+        "21": {
+          "size": 59
+        },
+        "22": {
+          "size": 59
+        },
+        "23": {
+          "size": 59
+        },
+        "24": {
+          "size": 59
+        },
+        "25": {
+          "size": 59
+        },
+        "26": {
+          "size": 59
+        },
+        "27": {
+          "size": 59
+        },
+        "28": {
+          "size": 59
+        },
+        "29": {
+          "size": 59
+        }
+      },
+      "merges": [],
+      "cells": {
+        "B6": "[\u00a9 TemplateLab.com](https://templatelab.com/)"
+      },
+      "styles": {
+        "B6": 20
+      },
+      "formats": {},
+      "borders": {},
+      "conditionalFormats": [],
+      "dataValidationRules": [],
+      "figures": [
+        {
+          "id": "19e31262b-7728",
+          "col": 1,
+          "row": 2,
+          "offset": {
+            "x": -1,
+            "y": 0
+          },
+          "width": 227,
+          "height": 48,
+          "tag": "image",
+          "data": {
+            "path": "/web/image/1370",
+            "mimetype": "image/png"
+          }
+        }
+      ],
+      "tables": [],
+      "areGridLinesVisible": true,
+      "isVisible": true,
+      "headerGroups": {
+        "ROW": [],
+        "COL": []
+      },
+      "comments": {}
+    }
+  ],
+  "styles": {
+    "1": {
+      "fillColor": "#FFFFFF",
+      "textColor": "#000000",
+      "fontSize": 12
+    },
+    "2": {
+      "fillColor": "#FFFFFF",
+      "textColor": "#000000",
+      "fontSize": 11
+    },
+    "3": {
+      "textColor": "#000000",
+      "fontSize": 11
+    },
+    "4": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 12
+    },
+    "5": {
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 12
+    },
+    "6": {
+      "bold": true,
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 13
+    },
+    "7": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 11
+    },
+    "8": {
+      "bold": true,
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E"
+    },
+    "9": {
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E"
+    },
+    "10": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 12
+    },
+    "11": {
+      "verticalAlign": "middle",
+      "fillColor": "#FFFFFF",
+      "textColor": "#03045E",
+      "fontSize": 80
+    },
+    "12": {
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 80
+    },
+    "13": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 11
+    },
+    "14": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E"
+    },
+    "15": {
+      "bold": true,
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 28
+    },
+    "16": {
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 28
+    },
+    "17": {
+      "bold": true,
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 12
+    },
+    "18": {
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 9
+    },
+    "19": {
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 11
+    },
+    "20": {
+      "underline": true,
+      "textColor": "#0563C1",
+      "fontSize": 11
+    }
+  },
+  "formats": {
+    "1": "m/d/yyyy"
+  },
+  "borders": {
+    "1": {
+      "bottom": {
+        "style": "dotted",
+        "color": "#03045E"
+      }
+    },
+    "2": {
+      "bottom": {
+        "style": "dotted",
+        "color": "#000000"
+      }
+    }
+  },
+  "revisionId": "1de531cd-82c4-43e0-ad18-7b676e112241",
+  "uniqueFigureIds": true,
+  "settings": {
+    "locale": {
+      "name": "English (US)",
+      "code": "en_US",
+      "thousandsSeparator": ",",
+      "decimalSeparator": ".",
+      "weekStart": 7,
+      "dateFormat": "m/d/yyyy",
+      "timeFormat": "hh:mm:ss a",
+      "formulaArgSeparator": ","
+    }
+  },
+  "pivots": {},
+  "pivotNextId": 1,
+  "customTableStyles": {},
+  "globalFilters": [],
+  "lists": {},
+  "listNextId": 1,
+  "chartOdooMenusReferences": {}
+}
+
+=== AFTER TEMPLATE ===
+{
+  "version": "18.5.10",
+  "sheets": [
+    {
+      "id": "Manufacturing Work Order",
+      "name": "Manufacturing Delivery Tickets",
+      "colNumber": 30,
+      "rowNumber": 72,
+      "rows": {
+        "0": {
+          "size": 21
+        },
+        "1": {
+          "size": 11
+        },
+        "2": {
+          "size": 46
+        },
+        "3": {
+          "size": 45
+        },
+        "4": {
+          "size": 11
+        },
+        "5": {
+          "size": 20
+        },
+        "6": {
+          "size": 20
+        },
+        "7": {
+          "size": 22
+        },
+        "8": {
+          "size": 16
+        },
+        "9": {
+          "size": 22
+        },
+        "10": {
+          "size": 16
+        },
+        "11": {
+          "size": 22
+        },
+        "12": {
+          "size": 16
+        },
+        "13": {
+          "size": 22
+        },
+        "14": {
+          "size": 20
+        },
+        "15": {
+          "size": 20
+        },
+        "16": {
+          "size": 13
+        },
+        "17": {
+          "size": 20
+        },
+        "18": {
+          "size": 18
+        },
+        "19": {
+          "size": 26
+        },
+        "20": {
+          "size": 18
+        },
+        "21": {
+          "size": 18
+        },
+        "22": {
+          "size": 18
+        },
+        "23": {
+          "size": 19
+        },
+        "24": {
+          "size": 34
+        },
+        "25": {
+          "size": 18
+        },
+        "26": {
+          "size": 18
+        },
+        "27": {
+          "size": 18
+        },
+        "28": {
+          "size": 18
+        },
+        "29": {
+          "size": 18
+        },
+        "30": {
+          "size": 18
+        },
+        "31": {
+          "size": 18
+        },
+        "32": {
+          "size": 18
+        },
+        "33": {
+          "size": 18
+        },
+        "34": {
+          "size": 18
+        },
+        "35": {
+          "size": 18
+        },
+        "36": {
+          "size": 18
+        },
+        "37": {
+          "size": 18
+        },
+        "38": {
+          "size": 18
+        },
+        "39": {
+          "size": 18
+        },
+        "40": {
+          "size": 18
+        },
+        "41": {
+          "size": 18
+        },
+        "42": {
+          "size": 18
+        },
+        "43": {
+          "size": 18
+        },
+        "44": {
+          "size": 18
+        },
+        "45": {
+          "size": 18
+        },
+        "46": {
+          "size": 18
+        },
+        "47": {
+          "size": 18
+        },
+        "48": {
+          "size": 18
+        },
+        "49": {
+          "size": 18
+        },
+        "50": {
+          "size": 18
+        },
+        "51": {
+          "size": 18
+        },
+        "52": {
+          "size": 18
+        },
+        "53": {
+          "size": 18
+        },
+        "54": {
+          "size": 18
+        },
+        "55": {
+          "size": 18
+        },
+        "56": {
+          "size": 18
+        },
+        "57": {
+          "size": 18
+        },
+        "58": {
+          "size": 18
+        },
+        "59": {
+          "size": 18
+        },
+        "60": {
+          "size": 18
+        },
+        "61": {
+          "size": 18
+        },
+        "62": {
+          "size": 18
+        },
+        "63": {
+          "size": 18
+        },
+        "64": {
+          "size": 18
+        },
+        "65": {
+          "size": 18
+        },
+        "66": {
+          "size": 18
+        },
+        "67": {
+          "size": 18
+        },
+        "68": {
+          "size": 18
+        },
+        "69": {
+          "size": 18
+        },
+        "70": {
+          "size": 18
+        },
+        "71": {
+          "size": 18
+        }
+      },
+      "cols": {
+        "0": {
+          "size": 26
+        },
+        "1": {
+          "size": 16
+        },
+        "2": {
+          "size": 149
+        },
+        "3": {
+          "size": 169
+        },
+        "4": {
+          "size": 16
+        },
+        "5": {
+          "size": 57
+        },
+        "6": {
+          "size": 57
+        },
+        "7": {
+          "size": 81
+        },
+        "8": {
+          "size": 52
+        },
+        "9": {
+          "size": 131
+        },
+        "10": {
+          "size": 16
+        },
+        "11": {
+          "size": 26
+        },
+        "12": {
+          "size": 62
+        },
+        "13": {
+          "size": 62
+        },
+        "14": {
+          "size": 62
+        },
+        "15": {
+          "size": 62
+        },
+        "16": {
+          "size": 62
+        },
+        "17": {
+          "size": 62
+        },
+        "18": {
+          "size": 62
+        },
+        "19": {
+          "size": 62
+        },
+        "20": {
+          "size": 62
+        },
+        "21": {
+          "size": 62
+        },
+        "22": {
+          "size": 62
+        },
+        "23": {
+          "size": 62
+        },
+        "24": {
+          "size": 62
+        },
+        "25": {
+          "size": 62
+        },
+        "26": {
+          "size": 62
+        },
+        "27": {
+          "size": 62
+        },
+        "28": {
+          "size": 62
+        },
+        "29": {
+          "size": 62
+        }
+      },
+      "merges": [
+        "F22:J22",
+        "F23:J23",
+        "F24:J24",
+        "F3:J3",
+        "F4:J4",
+        "C3:E4",
+        "I14:J14",
+        "D14:G14",
+        "F20:J20",
+        "F21:J21",
+        "D8:F8",
+        "H8:J8",
+        "D10:J10",
+        "D12:J12"
+      ],
+      "cells": {
+        "C8": "Order No:",
+        "C10": "Company:",
+        "C12": "Address:",
+        "C14": "Customer Order No.l:",
+        "D8": "CDT00006",
+        "D10": "Golden Gates Co",
+        "D12": "123 Manufacturing St, Industrial City, IC 45678",
+        "D14": "info@goldengates.com",
+        "F3": "MANUFACTURING",
+        "F4": "Delivery Tickets",
+        "F20": "Industrial Manufacturing Co.",
+        "F21": "456 Production Ave, Industrial City, IC 45678",
+        "F22": "info@industrialmfg.com",
+        "F23": "(123) 456-7891",
+        "G8": "Date:",
+        "H8": "45614",
+        "H14": "Driver Name:",
+        "I14": "(555) 123 456 7890"
+      },
+      "styles": {
+        "A1:A18": 1,
+        "B1:C1": 1,
+        "J1:K1": 1,
+        "B16:K16": 1,
+        "L1:L18": 1,
+        "A19:A25": 2,
+        "E1:I1": 2,
+        "B25:K25": 2,
+        "L19:L25": 2,
+        "A26:L72": 3,
+        "M1:AD72": 3,
+        "B9": 4,
+        "B11": 4,
+        "B13": 4,
+        "B15": 4,
+        "B2:C2": 4,
+        "B6:C7": 4,
+        "B17:E18": 4,
+        "F18": 4,
+        "D7:I7": 4,
+        "J2": 4,
+        "J6:J7": 4,
+        "K2:K15": 4,
+        "G17:K18": 4,
+        "B3:D5": 5,
+        "E3:E4": 5,
+        "F17": 5,
+        "B8": 6,
+        "B10": 6,
+        "B12": 6,
+        "B14": 6,
+        "B19:E24": 7,
+        "F19:J19": 7,
+        "K19:K24": 7,
+        "C8": 8,
+        "C10": 8,
+        "C12": 8,
+        "C14": 8,
+        "G8": 8,
+        "H14": 8,
+        "C9": 9,
+        "C11": 9,
+        "C13": 9,
+        "D8:F8": 9,
+        "D14:G14": 9,
+        "H8:J8": 9,
+        "D10:J10": 9,
+        "D12:J12": 9,
+        "I14:J14": 9,
+        "C15:J15": 10,
+        "D1": 11,
+        "D2": 12,
+        "D6": 13,
+        "E5:E6": 13,
+        "E2:I2": 13,
+        "F6:I6": 13,
+        "D9:J9": 14,
+        "D11:J11": 14,
+        "D13:J13": 14,
+        "F3:J3": 15,
+        "F4:J5": 16,
+        "F20:J20": 17,
+        "F21:J23": 18,
+        "F24:J24": 19
+      },
+      "formats": {
+        "H8": 1
+      },
+      "borders": {
+        "D8": 1,
+        "E8": 1,
+        "F8": 1,
+        "H8": 1,
+        "I8": 1,
+        "J8": 1,
+        "D10": 1,
+        "E10": 1,
+        "F10": 1,
+        "G10": 1,
+        "H10": 1,
+        "I10": 1,
+        "J10": 1,
+        "D12": 1,
+        "E12": 1,
+        "F12": 1,
+        "G12": 1,
+        "H12": 1,
+        "I12": 1,
+        "J12": 1,
+        "D14": 2,
+        "E14": 2,
+        "F14": 2,
+        "G14": 2,
+        "I14": 2,
+        "J14": 2
+      },
+      "conditionalFormats": [],
+      "dataValidationRules": [],
+      "figures": [
+        {
+          "id": "1",
+          "col": 2,
+          "row": 18,
+          "offset": {
+            "x": 1,
+            "y": 8
+          },
+          "width": 96,
+          "height": 97,
+          "tag": "image",
+          "data": {
+            "path": "/web/image/1368",
+            "mimetype": "image/png"
+          }
+        },
+        {
+          "id": "2",
+          "col": 2,
+          "row": 2,
+          "offset": {
+            "x": 7,
+            "y": 1
+          },
+          "width": 230,
+          "height": 87,
+          "tag": "image",
+          "data": {
+            "path": "/web/image/1369",
+            "mimetype": "image/png"
+          }
+        }
+      ],
+      "tables": [],
+      "areGridLinesVisible": true,
+      "isVisible": true,
+      "headerGroups": {
+        "ROW": [],
+        "COL": []
+      },
+      "comments": {}
+    },
+    {
+      "id": "\u00a9",
+      "name": "\u00a9",
+      "colNumber": 30,
+      "rowNumber": 100,
+      "rows": {
+        "0": {
+          "size": 19
+        },
+        "1": {
+          "size": 19
+        },
+        "2": {
+          "size": 19
+        },
+        "3": {
+          "size": 19
+        },
+        "4": {
+          "size": 19
+        },
+        "5": {
+          "size": 19
+        },
+        "6": {
+          "size": 19
+        },
+        "7": {
+          "size": 19
+        },
+        "8": {
+          "size": 19
+        },
+        "9": {
+          "size": 19
+        },
+        "10": {
+          "size": 19
+        },
+        "11": {
+          "size": 19
+        },
+        "12": {
+          "size": 19
+        },
+        "13": {
+          "size": 19
+        },
+        "14": {
+          "size": 19
+        },
+        "15": {
+          "size": 19
+        },
+        "16": {
+          "size": 19
+        },
+        "17": {
+          "size": 19
+        },
+        "18": {
+          "size": 19
+        },
+        "19": {
+          "size": 19
+        },
+        "20": {
+          "size": 19
+        },
+        "21": {
+          "size": 19
+        },
+        "22": {
+          "size": 19
+        },
+        "23": {
+          "size": 19
+        },
+        "24": {
+          "size": 19
+        },
+        "25": {
+          "size": 19
+        },
+        "26": {
+          "size": 19
+        },
+        "27": {
+          "size": 19
+        },
+        "28": {
+          "size": 19
+        },
+        "29": {
+          "size": 19
+        },
+        "30": {
+          "size": 19
+        },
+        "31": {
+          "size": 19
+        },
+        "32": {
+          "size": 19
+        },
+        "33": {
+          "size": 19
+        },
+        "34": {
+          "size": 19
+        },
+        "35": {
+          "size": 19
+        },
+        "36": {
+          "size": 19
+        },
+        "37": {
+          "size": 19
+        },
+        "38": {
+          "size": 19
+        },
+        "39": {
+          "size": 19
+        },
+        "40": {
+          "size": 19
+        },
+        "41": {
+          "size": 19
+        },
+        "42": {
+          "size": 19
+        },
+        "43": {
+          "size": 19
+        },
+        "44": {
+          "size": 19
+        },
+        "45": {
+          "size": 19
+        },
+        "46": {
+          "size": 19
+        },
+        "47": {
+          "size": 19
+        },
+        "48": {
+          "size": 19
+        },
+        "49": {
+          "size": 19
+        },
+        "50": {
+          "size": 19
+        },
+        "51": {
+          "size": 19
+        },
+        "52": {
+          "size": 19
+        },
+        "53": {
+          "size": 19
+        },
+        "54": {
+          "size": 19
+        },
+        "55": {
+          "size": 19
+        },
+        "56": {
+          "size": 19
+        },
+        "57": {
+          "size": 19
+        },
+        "58": {
+          "size": 19
+        },
+        "59": {
+          "size": 19
+        },
+        "60": {
+          "size": 19
+        },
+        "61": {
+          "size": 19
+        },
+        "62": {
+          "size": 19
+        },
+        "63": {
+          "size": 19
+        },
+        "64": {
+          "size": 19
+        },
+        "65": {
+          "size": 19
+        },
+        "66": {
+          "size": 19
+        },
+        "67": {
+          "size": 19
+        },
+        "68": {
+          "size": 19
+        },
+        "69": {
+          "size": 19
+        },
+        "70": {
+          "size": 19
+        },
+        "71": {
+          "size": 19
+        },
+        "72": {
+          "size": 19
+        },
+        "73": {
+          "size": 19
+        },
+        "74": {
+          "size": 19
+        },
+        "75": {
+          "size": 19
+        },
+        "76": {
+          "size": 19
+        },
+        "77": {
+          "size": 19
+        },
+        "78": {
+          "size": 19
+        },
+        "79": {
+          "size": 19
+        },
+        "80": {
+          "size": 19
+        },
+        "81": {
+          "size": 19
+        },
+        "82": {
+          "size": 19
+        },
+        "83": {
+          "size": 19
+        },
+        "84": {
+          "size": 19
+        },
+        "85": {
+          "size": 19
+        },
+        "86": {
+          "size": 19
+        },
+        "87": {
+          "size": 19
+        },
+        "88": {
+          "size": 19
+        },
+        "89": {
+          "size": 19
+        },
+        "90": {
+          "size": 19
+        },
+        "91": {
+          "size": 19
+        },
+        "92": {
+          "size": 19
+        },
+        "93": {
+          "size": 19
+        },
+        "94": {
+          "size": 19
+        },
+        "95": {
+          "size": 19
+        },
+        "96": {
+          "size": 19
+        },
+        "97": {
+          "size": 19
+        },
+        "98": {
+          "size": 19
+        },
+        "99": {
+          "size": 19
+        }
+      },
+      "cols": {
+        "0": {
+          "size": 59
+        },
+        "1": {
+          "size": 223
+        },
+        "2": {
+          "size": 59
+        },
+        "3": {
+          "size": 59
+        },
+        "4": {
+          "size": 59
+        },
+        "5": {
+          "size": 59
+        },
+        "6": {
+          "size": 59
+        },
+        "7": {
+          "size": 59
+        },
+        "8": {
+          "size": 59
+        },
+        "9": {
+          "size": 59
+        },
+        "10": {
+          "size": 59
+        },
+        "11": {
+          "size": 59
+        },
+        "12": {
+          "size": 59
+        },
+        "13": {
+          "size": 59
+        },
+        "14": {
+          "size": 59
+        },
+        "15": {
+          "size": 59
+        },
+        "16": {
+          "size": 59
+        },
+        "17": {
+          "size": 59
+        },
+        "18": {
+          "size": 59
+        },
+        "19": {
+          "size": 59
+        },
+        "20": {
+          "size": 59
+        },
+        "21": {
+          "size": 59
+        },
+        "22": {
+          "size": 59
+        },
+        "23": {
+          "size": 59
+        },
+        "24": {
+          "size": 59
+        },
+        "25": {
+          "size": 59
+        },
+        "26": {
+          "size": 59
+        },
+        "27": {
+          "size": 59
+        },
+        "28": {
+          "size": 59
+        },
+        "29": {
+          "size": 59
+        }
+      },
+      "merges": [],
+      "cells": {
+        "B6": "[\u00a9 TemplateLab.com](https://templatelab.com/)"
+      },
+      "styles": {
+        "B6": 20
+      },
+      "formats": {},
+      "borders": {},
+      "conditionalFormats": [],
+      "dataValidationRules": [],
+      "figures": [
+        {
+          "id": "19e31262b-7728",
+          "col": 1,
+          "row": 2,
+          "offset": {
+            "x": -1,
+            "y": 0
+          },
+          "width": 227,
+          "height": 48,
+          "tag": "image",
+          "data": {
+            "path": "/web/image/1370",
+            "mimetype": "image/png"
+          }
+        }
+      ],
+      "tables": [],
+      "areGridLinesVisible": true,
+      "isVisible": true,
+      "headerGroups": {
+        "ROW": [],
+        "COL": []
+      },
+      "comments": {}
+    }
+  ],
+  "styles": {
+    "1": {
+      "fillColor": "#FFFFFF",
+      "textColor": "#000000",
+      "fontSize": 12
+    },
+    "2": {
+      "fillColor": "#FFFFFF",
+      "textColor": "#000000",
+      "fontSize": 11
+    },
+    "3": {
+      "textColor": "#000000",
+      "fontSize": 11
+    },
+    "4": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 12
+    },
+    "5": {
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 12
+    },
+    "6": {
+      "bold": true,
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 13
+    },
+    "7": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 11
+    },
+    "8": {
+      "bold": true,
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E"
+    },
+    "9": {
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E"
+    },
+    "10": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 12
+    },
+    "11": {
+      "verticalAlign": "middle",
+      "fillColor": "#FFFFFF",
+      "textColor": "#03045E",
+      "fontSize": 80
+    },
+    "12": {
+      "verticalAlign": "middle",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 80
+    },
+    "13": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 11
+    },
+    "14": {
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E"
+    },
+    "15": {
+      "bold": true,
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 28
+    },
+    "16": {
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#000000",
+      "fontSize": 28
+    },
+    "17": {
+      "bold": true,
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 12
+    },
+    "18": {
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 9
+    },
+    "19": {
+      "verticalAlign": "middle",
+      "align": "right",
+      "fillColor": "#D5E0FF",
+      "textColor": "#03045E",
+      "fontSize": 11
+    },
+    "20": {
+      "underline": true,
+      "textColor": "#0563C1",
+      "fontSize": 11
+    }
+  },
+  "formats": {
+    "1": "m/d/yyyy"
+  },
+  "borders": {
+    "1": {
+      "bottom": {
+        "style": "dotted",
+        "color": "#03045E"
+      }
+    },
+    "2": {
+      "bottom": {
+        "style": "dotted",
+        "color": "#000000"
+      }
+    }
+  },
+  "revisionId": "1de531cd-82c4-43e0-ad18-7b676e112241",
+  "uniqueFigureIds": true,
+  "settings": {
+    "locale": {
+      "name": "English (US)",
+      "code": "en_US",
+      "thousandsSeparator": ",",
+      "decimalSeparator": ".",
+      "weekStart": 7,
+      "dateFormat": "m/d/yyyy",
+      "timeFormat": "hh:mm:ss a",
+      "formulaArgSeparator": ","
+    }
+  },
+  "pivots": {},
+  "pivotNextId": 1,
+  "customTableStyles": {},
+  "globalFilters": [],
+  "lists": {},
+  "listNextId": 1,
+  "chartOdooMenusReferences": {}
+}

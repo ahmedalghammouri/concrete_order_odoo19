@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_concrete_delivery_ticket_tree" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.tree</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="arch" type="xml">
+            <list string="Delivery Tickets">
+                <field name="name"/>
+                <field name="delivery_date"/>
+                <field name="customer_id"/>
+                <field name="site_name"/>
+                <field name="volume_m3"/>
+                <field name="driver_name_text"/>
+                <field name="vehicle_no"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_concrete_delivery_ticket_form" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.form</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="arch" type="xml">
+            <form string="Concrete Delivery Ticket">
+                <header>
+                    <button name="action_generate_excel" string="Generate Excel" type="object" class="btn-primary"/>
+                    <button name="action_open_generated_document" string="Open Document" type="object" class="btn-success" invisible="not generated_document_id"/>
+                    <button name="action_print_document" string="Print Document" type="object" class="btn-info" invisible="not generated_document_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Ticket Information">
+                            <field name="name"/>
+                            <field name="ticket_serial_no"/>
+                            <field name="delivery_date"/>
+                            <field name="delivery_time"/>
+                            <field name="customer_id"/>
+                            <field name="customer_order_no"/>
+                            <field name="enquiry_form_no"/>
+                        </group>
+                        <group string="Delivery Details">
+                            <field name="delivery_to"/>
+                            <field name="site_no"/>
+                            <field name="site_name"/>
+                            <field name="area"/>
+                            <field name="template_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Plant Information">
+                            <field name="plant_no"/>
+                            <field name="plant_name"/>
+                            <field name="plant_batch_no"/>
+                        </group>
+                        <group string="Mix Details">
+                            <field name="mix_description"/>
+                            <field name="cement_type"/>
+                            <field name="admixture"/>
+                            <field name="total_admixtures"/>
+                            <field name="slump_value"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Volume &amp; Quantity">
+                            <field name="volume_m3"/>
+                            <field name="total_volume_delivered"/>
+                            <field name="quantity_delivered"/>
+                            <field name="batch_size"/>
+                        </group>
+                        <group string="Vehicle &amp; Driver">
+                            <field name="driver_id"/>
+                            <field name="driver_name_text"/>
+                            <field name="vehicle_no"/>
+                            <field name="trailer_no"/>
+                            <field name="pump_status"/>
+                            <field name="driver_performance"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Time Tracking">
+                            <field name="time_ex_plant"/>
+                            <field name="time_on_site"/>
+                            <field name="time_start_discharge"/>
+                            <field name="time_finish_discharge"/>
+                            <field name="time_returned_plant"/>
+                            <field name="total_time_taken"/>
+                            <field name="max_unloading_time"/>
+                        </group>
+                        <group string="Signatures">
+                            <field name="customer_signature_date"/>
+                            <field name="signature_plant"/>
+                            <field name="signature_customer"/>
+                            <field name="signature_supervisor"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="water_added" nolabel="1"/>
+                        <field name="delivery_note" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <!-- <record id="view_concrete_delivery_ticket_search" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.search</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Search Delivery Tickets">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="site_name"/>
+                <field name="driver_name_text"/>
+                <field name="vehicle_no"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Customer" name="group_customer" context="{'group_by': 'customer_id'}"/>
+                    <filter string="Delivery Date" name="group_date" context="{'group_by': 'delivery_date'}"/>
+                    <filter string="Site" name="group_site" context="{'group_by': 'site_name'}"/>
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- Action -->
+    <record id="action_concrete_delivery_ticket" model="ir.actions.act_window">
+        <field name="name">Delivery Tickets</field>
+        <field name="res_model">concrete.delivery.ticket</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Concrete Delivery Ticket
+            </p>
+        </field>
+    </record>
+</odoo>

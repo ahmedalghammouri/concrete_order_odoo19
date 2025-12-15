@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- list View -->
+    <record id="view_excel_template_list" model="ir.ui.view">
+        <field name="name">excel.template.list</field>
+        <field name="model">excel.template</field>
+        <field name="arch" type="xml">
+            <list string="Excel Templates">
+                <field name="name"/>
+                <field name="filename"/>
+                <field name="document_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_excel_template_form" model="ir.ui.view">
+        <field name="name">excel.template.form</field>
+        <field name="model">excel.template</field>
+        <field name="arch" type="xml">
+            <form string="Excel Template">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="document_id"/>
+                        <field name="filename"/>
+                        <field name="file" filename="filename"/>
+                    </group>
+                    <notebook>
+                        <page string="Field Mappings">
+                            <field name="mapping_ids">
+                                <list editable="bottom">
+                                    <field name="field_name"/>
+                                    <field name="cell_location"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_excel_template" model="ir.actions.act_window">
+        <field name="name">Excel Templates</field>
+        <field name="res_model">excel.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Excel Template
+            </p>
+        </field>
+    </record>
+</odoo>
