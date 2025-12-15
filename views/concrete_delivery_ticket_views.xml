@@ -1,138 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Tree View -->
-    <record id="view_concrete_delivery_ticket_tree" model="ir.ui.view">
-        <field name="name">concrete.delivery.ticket.tree</field>
+    <record id="view_concrete_delivery_ticket_list" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.view.list</field>
         <field name="model">concrete.delivery.ticket</field>
         <field name="arch" type="xml">
-            <list string="Delivery Tickets">
-                <field name="name"/>
-                <field name="delivery_date"/>
+            <list decoration-info="generated_document_id" sample="1" multi_edit="1">
+                <field name="name" decoration-bf="1"/>
+                <field name="delivery_date" widget="date"/>
                 <field name="customer_id"/>
-                <field name="site_name"/>
-                <field name="volume_m3"/>
-                <field name="driver_name_text"/>
-                <field name="vehicle_no"/>
+                <field name="site_name" optional="show"/>
+                <field name="volume_m3" sum="Total Volume" widget="float" decoration-bf="1" decoration-success="volume_m3 &gt; 0"/>
+                <field name="driver_name_text" optional="hide"/>
+                <field name="vehicle_no" optional="show" decoration-bf="1"/>
+                <field name="mix_description" optional="hide"/>
+                <field name="generated_document_id" optional="hide" widget="badge" decoration-success="generated_document_id"/>
             </list>
         </field>
     </record>
 
-    <!-- Form View -->
     <record id="view_concrete_delivery_ticket_form" model="ir.ui.view">
-        <field name="name">concrete.delivery.ticket.form</field>
+        <field name="name">concrete.delivery.ticket.view.form</field>
         <field name="model">concrete.delivery.ticket</field>
         <field name="arch" type="xml">
             <form string="Concrete Delivery Ticket">
                 <header>
-                    <button name="action_generate_excel" string="Generate Excel" type="object" class="btn-primary"/>
-                    <button name="action_open_generated_document" string="Open Document" type="object" class="btn-success" invisible="not generated_document_id"/>
-                    <button name="action_print_document" string="Print Document" type="object" class="btn-info" invisible="not generated_document_id"/>
+                    <button name="action_generate_excel" string="Generate Excel" type="object" class="oe_highlight"/>
+                    <button name="action_open_generated_document" string="Open Document" type="object" invisible="not generated_document_id" class="btn-success"/>
+                    <button name="action_print_document" string="Print Certificate" type="object" invisible="not generated_document_id" class="btn-secondary"/>
                 </header>
                 <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
                     <group>
-                        <group string="Ticket Information">
-                            <field name="name"/>
+                        <field name="generated_document_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <group>
                             <field name="ticket_serial_no"/>
                             <field name="delivery_date"/>
-                            <field name="delivery_time"/>
-                            <field name="customer_id"/>
+                            <field name="delivery_time" widget="float_time"/>
+                            <field name="customer_id" options="{'no_create': True}"/>
+                        </group>
+                        <group>
                             <field name="customer_order_no"/>
                             <field name="enquiry_form_no"/>
-                        </group>
-                        <group string="Delivery Details">
-                            <field name="delivery_to"/>
-                            <field name="site_no"/>
-                            <field name="site_name"/>
-                            <field name="area"/>
-                            <field name="template_id"/>
+                            <field name="template_id" options="{'no_create': True}"/>
                         </group>
                     </group>
-                    <group>
-                        <group string="Plant Information">
-                            <field name="plant_no"/>
-                            <field name="plant_name"/>
-                            <field name="plant_batch_no"/>
-                        </group>
-                        <group string="Mix Details">
-                            <field name="mix_description"/>
-                            <field name="cement_type"/>
-                            <field name="admixture"/>
-                            <field name="total_admixtures"/>
-                            <field name="slump_value"/>
-                        </group>
-                    </group>
-                    <group>
-                        <group string="Volume &amp; Quantity">
-                            <field name="volume_m3"/>
-                            <field name="total_volume_delivered"/>
-                            <field name="quantity_delivered"/>
-                            <field name="batch_size"/>
-                        </group>
-                        <group string="Vehicle &amp; Driver">
-                            <field name="driver_id"/>
-                            <field name="driver_name_text"/>
-                            <field name="vehicle_no"/>
-                            <field name="trailer_no"/>
-                            <field name="pump_status"/>
-                            <field name="driver_performance"/>
-                        </group>
-                    </group>
-                    <group>
-                        <group string="Time Tracking">
-                            <field name="time_ex_plant"/>
-                            <field name="time_on_site"/>
-                            <field name="time_start_discharge"/>
-                            <field name="time_finish_discharge"/>
-                            <field name="time_returned_plant"/>
-                            <field name="total_time_taken"/>
-                            <field name="max_unloading_time"/>
-                        </group>
-                        <group string="Signatures">
-                            <field name="customer_signature_date"/>
-                            <field name="signature_plant"/>
-                            <field name="signature_customer"/>
-                            <field name="signature_supervisor"/>
-                        </group>
-                    </group>
-                    <group string="Notes">
-                        <field name="water_added" nolabel="1"/>
-                        <field name="delivery_note" nolabel="1"/>
-                    </group>
+                    <notebook>
+                        <page string="Delivery" name="delivery">
+                            <group>
+                                <group string="Site Information">
+                                    <field name="delivery_to"/>
+                                    <field name="site_no"/>
+                                    <field name="site_name"/>
+                                    <field name="area"/>
+                                </group>
+                                <group string="Volume">
+                                    <label for="volume_m3" string="Volume (M³)"/>
+                                    <div>
+                                        <field name="volume_m3" class="oe_inline" style="font-size: 24px; font-weight: bold; color: #0066cc;"/>
+                                    </div>
+                                    <field name="total_volume_delivered"/>
+                                    <field name="quantity_delivered"/>
+                                    <field name="batch_size"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Mix &amp; Plant" name="mix_plant">
+                            <group>
+                                <group string="Plant">
+                                    <field name="plant_no"/>
+                                    <field name="plant_name"/>
+                                    <field name="plant_batch_no"/>
+                                </group>
+                                <group string="Mix">
+                                    <field name="mix_description"/>
+                                    <field name="cement_type"/>
+                                    <field name="admixture"/>
+                                    <field name="total_admixtures"/>
+                                    <field name="slump_value"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Vehicle &amp; Driver" name="vehicle">
+                            <group>
+                                <group string="Driver">
+                                    <field name="driver_id" options="{'no_create': True}"/>
+                                    <field name="driver_name_text"/>
+                                    <field name="driver_performance"/>
+                                </group>
+                                <group string="Vehicle">
+                                    <field name="vehicle_no"/>
+                                    <field name="trailer_no"/>
+                                    <field name="pump_status"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Time Tracking" name="time">
+                            <group>
+                                <group>
+                                    <field name="time_ex_plant" readonly="1" widget="float_time"/>
+                                    <field name="time_on_site" readonly="1" widget="float_time"/>
+                                    <field name="time_start_discharge" readonly="1" widget="float_time"/>
+                                    <field name="time_finish_discharge" readonly="1" widget="float_time"/>
+                                </group>
+                                <group>
+                                    <field name="time_returned_plant" readonly="1" widget="float_time"/>
+                                    <field name="total_time_taken" readonly="1" widget="float_time" decoration-bf="1"/>
+                                    <field name="max_unloading_time" readonly="1" widget="float_time"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <group>
+                                <field name="water_added" placeholder="Additional notes..."/>
+                                <field name="delivery_note" placeholder="Additional notes..."/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
                 <chatter/>
             </form>
         </field>
     </record>
 
-    <!-- Search View -->
-    <!-- <record id="view_concrete_delivery_ticket_search" model="ir.ui.view">
-        <field name="name">concrete.delivery.ticket.search</field>
+    <record id="view_concrete_delivery_ticket_search" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.view.search</field>
         <field name="model">concrete.delivery.ticket</field>
         <field name="arch" type="xml">
-            <search string="Search Delivery Tickets">
-                <field name="name"/>
+            <search string="Concrete Delivery Tickets">
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('ticket_serial_no', 'ilike', self)]" string="Ticket/Serial"/>
+                <field name="ticket_serial_no"/>
                 <field name="customer_id"/>
                 <field name="site_name"/>
                 <field name="driver_name_text"/>
                 <field name="vehicle_no"/>
-
-                <group expand="0" string="Group By">
-                    <filter string="Customer" name="group_customer" context="{'group_by': 'customer_id'}"/>
-                    <filter string="Delivery Date" name="group_date" context="{'group_by': 'delivery_date'}"/>
-                    <filter string="Site" name="group_site" context="{'group_by': 'site_name'}"/>
+                <field name="mix_description"/>
+                <filter string="With Document" name="with_document" domain="[('generated_document_id', '!=', False)]"/>
+                <filter string="Without Document" name="without_document" domain="[('generated_document_id', '=', False)]"/>
+                <separator/>
+                <filter string="High Volume (&gt;10M³)" name="high_volume" domain="[('volume_m3', '&gt;', 10)]"/>
+                <filter string="Medium Volume (5-10M³)" name="medium_volume" domain="[('volume_m3', '&gt;=', 5), ('volume_m3', '&lt;=', 10)]"/>
+                <filter string="Low Volume (&lt;5M³)" name="low_volume" domain="[('volume_m3', '&lt;', 5)]"/>
+                <separator/>
+                <group>
+                    <filter string="Customer" name="group_customer" domain="[]" context="{'group_by':'customer_id'}"/>
+                    <filter string="Site" name="group_site" domain="[]" context="{'group_by':'site_name'}"/>
+                    <filter string="Driver" name="group_driver" domain="[]" context="{'group_by':'driver_name_text'}"/>
+                    <filter string="Vehicle" name="group_vehicle" domain="[]" context="{'group_by':'vehicle_no'}"/>
+                    <filter string="Date" name="group_date" domain="[]" context="{'group_by':'delivery_date:day'}"/>
+                    <filter string="Week" name="group_week" domain="[]" context="{'group_by':'delivery_date:week'}"/>
+                    <filter string="Month" name="group_month" domain="[]" context="{'group_by':'delivery_date:month'}"/>
                 </group>
             </search>
         </field>
-    </record> -->
+    </record>
 
-    <!-- Action -->
+    <record id="view_concrete_delivery_ticket_kanban" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.view.kanban</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="arch" type="xml">
+            <kanban sample="1">
+                <field name="name"/>
+                <field name="delivery_date"/>
+                <field name="customer_id"/>
+                <field name="site_name"/>
+                <field name="volume_m3"/>
+                <field name="vehicle_no"/>
+                <field name="driver_name_text"/>
+                <field name="mix_description"/>
+                <field name="generated_document_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb-2">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title"><t t-out="record.name.value"/></strong>
+                                    <div class="text-muted small"><i class="fa fa-calendar" title="Date"/> <t t-out="record.delivery_date.value"/></div>
+                                </div>
+                                <span class="badge float-end" t-att-class="{'bg-success text-white': record.generated_document_id.raw_value, 'bg-secondary text-white': !record.generated_document_id.raw_value}">
+                                    <t t-if="record.generated_document_id.raw_value">Generated</t>
+                                    <t t-else="">Draft</t>
+                                </span>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <div class="mb-1"><i class="fa fa-building text-info" title="Customer"/> <t t-out="record.customer_id.value"/></div>
+                                <div class="mb-1"><i class="fa fa-map-marker text-danger" title="Site"/> <t t-out="record.site_name.value"/></div>
+                                <div class="mb-2"><i class="fa fa-cube text-success" title="Mix"/> <t t-out="record.mix_description.value"/></div>
+                                <div class="p-3 text-center border rounded">
+                                    <div class="h3 mb-0 fw-bold text-primary">
+                                        <t t-out="record.volume_m3.value"/> M³
+                                    </div>
+                                    <small class="text-muted">Volume</small>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom mt-2 pt-2 border-top">
+                                <div class="text-muted small"><i class="fa fa-truck" title="Vehicle"/> <t t-out="record.vehicle_no.value"/> | <i class="fa fa-user" title="Driver"/> <t t-out="record.driver_name_text.value"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_concrete_delivery_ticket_graph" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.view.graph</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="arch" type="xml">
+            <graph string="Delivery Analysis" type="bar" sample="1" stacked="0">
+                <field name="delivery_date" interval="day"/>
+                <field name="volume_m3" type="measure"/>
+                <field name="total_volume_delivered" type="measure"/>
+                <field name="total_time_taken" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_concrete_delivery_ticket_pivot" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.view.pivot</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="arch" type="xml">
+            <pivot string="Delivery Pivot" sample="1" display_quantity="1">
+                <field name="delivery_date" interval="month" type="row"/>
+                <field name="customer_id" type="row"/>
+                <field name="site_name" type="col"/>
+                <field name="volume_m3" type="measure"/>
+                <field name="total_volume_delivered" type="measure"/>
+                <field name="total_time_taken" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
     <record id="action_concrete_delivery_ticket" model="ir.actions.act_window">
         <field name="name">Delivery Tickets</field>
         <field name="res_model">concrete.delivery.ticket</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">kanban,list,form,graph,pivot</field>
+        <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your first Concrete Delivery Ticket
+                Create your first delivery ticket
+            </p>
+            <p>
+                Track concrete deliveries with real-time information.
             </p>
         </field>
     </record>

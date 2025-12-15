@@ -3,6 +3,7 @@
     <!-- Main Menu -->
     <menuitem id="menu_concrete_order_root"
               name="Concrete Order"
+              web_icon="concrete_order,static/description/icon.png"
               sequence="10"/>
 
     <!-- Delivery Tickets Menu -->
