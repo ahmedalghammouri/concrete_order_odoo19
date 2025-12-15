@@ -4,16 +4,17 @@
         <field name="name">concrete.delivery.ticket.view.list</field>
         <field name="model">concrete.delivery.ticket</field>
         <field name="arch" type="xml">
-            <list decoration-info="generated_document_id" sample="1" multi_edit="1">
+            <list decoration-info="state == 'in_transit'" decoration-success="state == 'done'" decoration-warning="state == 'delivered'" decoration-danger="is_delayed" sample="1" multi_edit="1">
                 <field name="name" decoration-bf="1"/>
                 <field name="delivery_date" widget="date"/>
                 <field name="customer_id"/>
                 <field name="site_name" optional="show"/>
+                <field name="product_id" optional="hide"/>
                 <field name="volume_m3" sum="Total Volume" widget="float" decoration-bf="1" decoration-success="volume_m3 &gt; 0"/>
                 <field name="driver_name_text" optional="hide"/>
                 <field name="vehicle_no" optional="show" decoration-bf="1"/>
-                <field name="mix_description" optional="hide"/>
-                <field name="generated_document_id" optional="hide" widget="badge" decoration-success="generated_document_id"/>
+                <field name="is_delayed" optional="hide" widget="boolean"/>
+                <field name="state" widget="badge" decoration-success="state == 'done'" decoration-info="state == 'in_transit'" decoration-warning="state == 'delivered'"/>
             </list>
         </field>
     </record>
@@ -24,16 +25,30 @@
         <field name="arch" type="xml">
             <form string="Concrete Delivery Ticket">
                 <header>
-                    <button name="action_generate_excel" string="Generate Excel" type="object" class="oe_highlight"/>
-                    <button name="action_open_generated_document" string="Open Document" type="object" invisible="not generated_document_id" class="btn-success"/>
-                    <button name="action_print_document" string="Print Certificate" type="object" invisible="not generated_document_id" class="btn-secondary"/>
+                    <button name="action_confirm" string="Confirm" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_in_transit" string="In Transit" type="object" invisible="state != 'confirmed'" class="oe_highlight"/>
+                    <button name="action_delivered" string="Mark Delivered" type="object" invisible="state != 'in_transit'" class="oe_highlight"/>
+                    <button name="action_done" string="Done" type="object" invisible="state != 'delivered'" class="oe_highlight"/>
+                    <button name="action_generate_excel" string="Generate Excel" type="object" class="btn-secondary"/>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state in ['done', 'cancel']" class="btn-danger" confirm="Are you sure you want to cancel this ticket?"/>
+                    <button name="action_draft" string="Set to Draft" type="object" invisible="state != 'cancel'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,in_transit,delivered,done"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_generated_document" type="object" class="oe_stat_button" icon="fa-file-excel-o" invisible="not generated_document_id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Document</span>
+                            </div>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Delayed" bg_color="text-bg-danger" invisible="not is_delayed"/>
                     <div class="oe_title">
                         <h1><field name="name" readonly="1"/></h1>
                     </div>
                     <group>
                         <field name="generated_document_id" invisible="1"/>
+                        <field name="is_delayed" invisible="1"/>
                     </group>
                     <group>
                         <group>
@@ -41,11 +56,15 @@
                             <field name="delivery_date"/>
                             <field name="delivery_time" widget="float_time"/>
                             <field name="customer_id" options="{'no_create': True}"/>
+                            <field name="customer_phone" readonly="1"/>
+                            <field name="customer_email" readonly="1"/>
                         </group>
                         <group>
                             <field name="customer_order_no"/>
                             <field name="enquiry_form_no"/>
                             <field name="template_id" options="{'no_create': True}"/>
+                            <field name="user_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
                         </group>
                     </group>
                     <notebook>
@@ -56,13 +75,16 @@
                                     <field name="site_no"/>
                                     <field name="site_name"/>
                                     <field name="area"/>
+                                    <field name="delivery_address" readonly="1"/>
                                 </group>
                                 <group string="Volume">
                                     <label for="volume_m3" string="Volume (M³)"/>
                                     <div>
                                         <field name="volume_m3" class="oe_inline" style="font-size: 24px; font-weight: bold; color: #0066cc;"/>
                                     </div>
-                                    <field name="total_volume_delivered"/>
+                                    <field name="product_id" options="{'no_create': True}"/>
+                                    <field name="product_uom_id" groups="uom.group_uom"/>
+                                    <field name="total_volume_delivered" readonly="1"/>
                                     <field name="quantity_delivered"/>
                                     <field name="batch_size"/>
                                 </group>
@@ -89,6 +111,7 @@
                                 <group string="Driver">
                                     <field name="driver_id" options="{'no_create': True}"/>
                                     <field name="driver_name_text"/>
+                                    <field name="driver_phone" readonly="1"/>
                                     <field name="driver_performance"/>
                                 </group>
                                 <group string="Vehicle">
@@ -101,15 +124,28 @@
                         <page string="Time Tracking" name="time">
                             <group>
                                 <group>
-                                    <field name="time_ex_plant" readonly="1" widget="float_time"/>
-                                    <field name="time_on_site" readonly="1" widget="float_time"/>
-                                    <field name="time_start_discharge" readonly="1" widget="float_time"/>
-                                    <field name="time_finish_discharge" readonly="1" widget="float_time"/>
+                                    <field name="time_ex_plant" readonly="1"/>
+                                    <field name="time_on_site" readonly="1"/>
+                                    <field name="time_start_discharge"/>
+                                    <field name="time_finish_discharge"/>
                                 </group>
                                 <group>
-                                    <field name="time_returned_plant" readonly="1" widget="float_time"/>
+                                    <field name="time_returned_plant"/>
                                     <field name="total_time_taken" readonly="1" widget="float_time" decoration-bf="1"/>
-                                    <field name="max_unloading_time" readonly="1" widget="float_time"/>
+                                    <field name="discharge_duration" readonly="1" widget="float_time"/>
+                                    <field name="max_unloading_time" widget="float_time"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Signatures" name="signatures">
+                            <group>
+                                <group>
+                                    <field name="customer_signature_date"/>
+                                    <field name="signature_plant" widget="image" class="oe_avatar"/>
+                                </group>
+                                <group>
+                                    <field name="signature_customer" widget="image" class="oe_avatar"/>
+                                    <field name="signature_supervisor" widget="image" class="oe_avatar"/>
                                 </group>
                             </group>
                         </page>
@@ -132,20 +168,26 @@
         <field name="arch" type="xml">
             <search string="Concrete Delivery Tickets">
                 <field name="name" filter_domain="['|', ('name', 'ilike', self), ('ticket_serial_no', 'ilike', self)]" string="Ticket/Serial"/>
-                <field name="ticket_serial_no"/>
                 <field name="customer_id"/>
                 <field name="site_name"/>
                 <field name="driver_name_text"/>
                 <field name="vehicle_no"/>
-                <field name="mix_description"/>
+                <field name="product_id"/>
+                <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter string="In Transit" name="in_transit" domain="[('state', '=', 'in_transit')]"/>
+                <filter string="Delivered" name="delivered" domain="[('state', '=', 'delivered')]"/>
+                <filter string="Done" name="done" domain="[('state', '=', 'done')]"/>
+                <separator/>
+                <filter string="Delayed" name="delayed" domain="[('is_delayed', '=', True)]"/>
                 <filter string="With Document" name="with_document" domain="[('generated_document_id', '!=', False)]"/>
-                <filter string="Without Document" name="without_document" domain="[('generated_document_id', '=', False)]"/>
                 <separator/>
                 <filter string="High Volume (&gt;10M³)" name="high_volume" domain="[('volume_m3', '&gt;', 10)]"/>
                 <filter string="Medium Volume (5-10M³)" name="medium_volume" domain="[('volume_m3', '&gt;=', 5), ('volume_m3', '&lt;=', 10)]"/>
                 <filter string="Low Volume (&lt;5M³)" name="low_volume" domain="[('volume_m3', '&lt;', 5)]"/>
                 <separator/>
                 <group>
+                    <filter string="Status" name="group_state" domain="[]" context="{'group_by':'state'}"/>
                     <filter string="Customer" name="group_customer" domain="[]" context="{'group_by':'customer_id'}"/>
                     <filter string="Site" name="group_site" domain="[]" context="{'group_by':'site_name'}"/>
                     <filter string="Driver" name="group_driver" domain="[]" context="{'group_by':'driver_name_text'}"/>
@@ -170,8 +212,9 @@
                 <field name="volume_m3"/>
                 <field name="vehicle_no"/>
                 <field name="driver_name_text"/>
-                <field name="mix_description"/>
-                <field name="generated_document_id"/>
+                <field name="product_id"/>
+                <field name="state"/>
+                <field name="is_delayed"/>
                 <templates>
                     <t t-name="card">
                         <div class="oe_kanban_global_click">
@@ -180,15 +223,14 @@
                                     <strong class="o_kanban_record_title"><t t-out="record.name.value"/></strong>
                                     <div class="text-muted small"><i class="fa fa-calendar" title="Date"/> <t t-out="record.delivery_date.value"/></div>
                                 </div>
-                                <span class="badge float-end" t-att-class="{'bg-success text-white': record.generated_document_id.raw_value, 'bg-secondary text-white': !record.generated_document_id.raw_value}">
-                                    <t t-if="record.generated_document_id.raw_value">Generated</t>
-                                    <t t-else="">Draft</t>
+                                <span class="badge float-end" t-att-class="{'bg-success text-white': record.state.raw_value == 'done', 'bg-info text-white': record.state.raw_value == 'in_transit', 'bg-warning text-dark': record.state.raw_value == 'delivered', 'bg-secondary text-white': record.state.raw_value == 'draft', 'bg-primary text-white': record.state.raw_value == 'confirmed', 'bg-danger text-white': record.is_delayed.raw_value}">
+                                    <t t-out="record.state.value"/>
                                 </span>
                             </div>
                             <div class="o_kanban_record_body">
                                 <div class="mb-1"><i class="fa fa-building text-info" title="Customer"/> <t t-out="record.customer_id.value"/></div>
                                 <div class="mb-1"><i class="fa fa-map-marker text-danger" title="Site"/> <t t-out="record.site_name.value"/></div>
-                                <div class="mb-2"><i class="fa fa-cube text-success" title="Mix"/> <t t-out="record.mix_description.value"/></div>
+                                <div class="mb-2"><i class="fa fa-cube text-success" title="Product"/> <t t-out="record.product_id.value"/></div>
                                 <div class="p-3 text-center border rounded">
                                     <div class="h3 mb-0 fw-bold text-primary">
                                         <t t-out="record.volume_m3.value"/> M³
@@ -215,6 +257,7 @@
                 <field name="volume_m3" type="measure"/>
                 <field name="total_volume_delivered" type="measure"/>
                 <field name="total_time_taken" type="measure"/>
+                <field name="discharge_duration" type="measure"/>
             </graph>
         </field>
     </record>
@@ -230,6 +273,7 @@
                 <field name="volume_m3" type="measure"/>
                 <field name="total_volume_delivered" type="measure"/>
                 <field name="total_time_taken" type="measure"/>
+                <field name="discharge_duration" type="measure"/>
             </pivot>
         </field>
     </record>
@@ -244,7 +288,7 @@
                 Create your first delivery ticket
             </p>
             <p>
-                Track concrete deliveries with real-time information.
+                Track concrete deliveries with real-time information and automated workflows.
             </p>
         </field>
     </record>
