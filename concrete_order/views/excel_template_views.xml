@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <list decoration-success="document_id" sample="1" multi_edit="1">
                 <field name="name" decoration-bf="1"/>
+                <field name="is_default" widget="boolean_toggle"/>
                 <field name="filename" optional="show"/>
                 <field name="document_id" optional="show" widget="badge" decoration-success="document_id"/>
                 <field name="mapping_ids" string="Mappings" widget="badge"/>
@@ -26,6 +27,7 @@
                         <group>
                             <field name="document_id" options="{'no_create': True}"/>
                             <field name="filename" readonly="1"/>
+                            <field name="is_default"/>
                         </group>
                         <group>
                             <field name="file" filename="filename"/>
@@ -51,6 +53,7 @@
             <search string="Excel Templates">
                 <field name="name"/>
                 <field name="filename"/>
+                <filter string="Default" name="default" domain="[('is_default', '=', True)]"/>
                 <filter string="With Document" name="with_doc" domain="[('document_id', '!=', False)]"/>
                 <filter string="Without Document" name="without_doc" domain="[('document_id', '=', False)]"/>
             </search>

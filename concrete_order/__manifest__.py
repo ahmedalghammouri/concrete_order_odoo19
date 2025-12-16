@@ -32,5 +32,6 @@
     'installable': True,
     'application': True,
     'auto_install': False,
-    'license': 'LGPL-3'
+    'license': 'LGPL-3',
+    'icon': '/concrete_order/static/description/icon.png'
 }

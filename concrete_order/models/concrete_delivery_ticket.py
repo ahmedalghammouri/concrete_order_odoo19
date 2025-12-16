@@ -85,7 +85,7 @@ class ConcreteDeliveryTicket(models.Model):
     signature_supervisor = fields.Binary(string='Site Supervisor Signature', attachment=True)
     
     # Document & Template
-    template_id = fields.Many2one('excel.template', string='Excel Template')
+    template_id = fields.Many2one('excel.template', string='Excel Template', default=lambda self: self.env['excel.template'].search([('is_default', '=', True)], limit=1))
     generated_document_id = fields.Many2one('documents.document', string='Generated Document', readonly=True, copy=False)
     
     # Company & User
