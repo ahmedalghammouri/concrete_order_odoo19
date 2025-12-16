@@ -30,9 +30,7 @@ registry.category("actions").add("action_print_spreadsheet", async function (_, 
                                     bubbles: true,
                                     cancelable: true
                                 });
-                                
                                 window.dispatchEvent(ctrlPEvent);
-                                
                                 setTimeout(() => {
                                     console.log('Closing window');
                                 }, 5000);
