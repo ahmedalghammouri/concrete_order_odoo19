@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_concrete_driver_list" model="ir.ui.view">
+        <field name="name">concrete.driver.view.list</field>
+        <field name="model">concrete.driver</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'inactive'" decoration-warning="state == 'on_leave'" sample="1" multi_edit="1">
+                <field name="name" decoration-bf="1"/>
+                <field name="phone"/>
+                <field name="vehicle_id" optional="show"/>
+                <field name="license_number" optional="hide"/>
+                <field name="license_expiry" optional="hide" widget="date"/>
+                <field name="performance_rating" widget="badge" optional="show" decoration-success="performance_rating == 'excellent'" decoration-info="performance_rating == 'good'"/>
+                <field name="state" widget="badge" decoration-success="state == 'active'" decoration-warning="state == 'on_leave'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_concrete_driver_form" model="ir.ui.view">
+        <field name="name">concrete.driver.view.form</field>
+        <field name="model">concrete.driver</field>
+        <field name="arch" type="xml">
+            <form string="Driver">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="active,on_leave,inactive"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_tickets" type="object" class="oe_stat_button" icon="fa-file-text-o" invisible="ticket_count == 0">
+                            <field name="ticket_count" widget="statinfo" string="Tickets"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" string="Driver Name"/>
+                        <h1><field name="name" placeholder="e.g., John Doe"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="phone"/>
+                            <field name="email" widget="email"/>
+                        </group>
+                        <group>
+                            <field name="license_number"/>
+                            <field name="license_expiry" widget="date"/>
+                            <field name="vehicle_id"/>
+                            <field name="performance_rating"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_concrete_driver_kanban" model="ir.ui.view">
+        <field name="name">concrete.driver.view.kanban</field>
+        <field name="model">concrete.driver</field>
+        <field name="arch" type="xml">
+            <kanban sample="1">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="vehicle_id"/>
+                <field name="license_expiry"/>
+                <field name="performance_rating"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb-2">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title"><t t-out="record.name.value"/></strong>
+                                    <div class="text-muted small" t-if="record.phone.value"><i class="fa fa-phone"/> <t t-out="record.phone.value"/></div>
+                                </div>
+                                <span class="badge float-end" t-att-class="{'bg-success text-white': record.state.raw_value == 'active', 'bg-warning text-dark': record.state.raw_value == 'on_leave', 'bg-secondary text-white': record.state.raw_value == 'inactive'}">
+                                    <t t-out="record.state.value"/>
+                                </span>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <div class="mb-1" t-if="record.vehicle_id.value"><i class="fa fa-truck text-info" title="Vehicle"/> <t t-out="record.vehicle_id.value"/></div>
+                                <div class="mb-1" t-if="record.performance_rating.raw_value">
+                                    <span class="badge" t-att-class="{'bg-success': record.performance_rating.raw_value == 'excellent', 'bg-info': record.performance_rating.raw_value == 'good', 'bg-warning': record.performance_rating.raw_value == 'fair', 'bg-danger': record.performance_rating.raw_value == 'bad'}">
+                                        <t t-out="record.performance_rating.value"/>
+                                    </span>
+                                </div>
+                                <div class="mb-1" t-if="record.license_expiry.raw_value">
+                                    <i class="fa fa-calendar text-muted"/> License: <t t-out="record.license_expiry.value"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_concrete_driver_search" model="ir.ui.view">
+        <field name="name">concrete.driver.view.search</field>
+        <field name="model">concrete.driver</field>
+        <field name="arch" type="xml">
+            <search string="Drivers">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="license_number"/>
+                <field name="vehicle_id"/>
+                <filter string="Active" name="active" domain="[('state', '=', 'active')]"/>
+                <filter string="On Leave" name="on_leave" domain="[('state', '=', 'on_leave')]"/>
+                <filter string="Excellent Performance" name="excellent" domain="[('performance_rating', '=', 'excellent')]"/>
+                <separator/>
+                <group>
+                    <filter string="Vehicle" name="group_vehicle" domain="[]" context="{'group_by':'vehicle_id'}"/>
+                    <filter string="Performance" name="group_performance" domain="[]" context="{'group_by':'performance_rating'}"/>
+                    <filter string="Status" name="group_state" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_concrete_driver" model="ir.actions.act_window">
+        <field name="name">Drivers</field>
+        <field name="res_model">concrete.driver</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first driver
+            </p>
+            <p>
+                Manage concrete mixer truck drivers.
+            </p>
+        </field>
+    </record>
+</odoo>

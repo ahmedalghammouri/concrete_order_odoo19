@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Main Menu -->
-    <menuitem id="menu_concrete_order_root"
-              name="Concrete Order"
-              web_icon="concrete_order,static/description/icon.png"
-              sequence="10"/>
+    <menuitem id="menu_concrete_order_root" name="Concrete Order" sequence="20" web_icon="concrete_order,static/description/icon.png"/>
 
-    <!-- Delivery Tickets Menu -->
-    <menuitem id="menu_concrete_delivery_ticket"
-              name="Delivery Tickets"
-              parent="menu_concrete_order_root"
-              action="action_concrete_delivery_ticket"
-              sequence="10"/>
+    <menuitem id="menu_concrete_delivery_ticket" name="Delivery Tickets" parent="menu_concrete_order_root" action="action_concrete_delivery_ticket" sequence="1"/>
+    
+    <menuitem id="menu_concrete_operations" name="Operations" parent="menu_concrete_order_root" sequence="5"/>
+    
+    <menuitem id="menu_concrete_fleet" name="Fleet" parent="menu_concrete_order_root" sequence="10"/>
+    <menuitem id="menu_concrete_vehicle" name="Vehicles" parent="menu_concrete_fleet" action="action_concrete_vehicle" sequence="1"/>
+    <menuitem id="menu_concrete_driver" name="Drivers" parent="menu_concrete_fleet" action="action_concrete_driver" sequence="2"/>
 
-    <!-- Configuration Menu -->
-    <menuitem id="menu_concrete_configuration"
-              name="Configuration"
-              parent="menu_concrete_order_root"
-              sequence="100"/>
-
-    <!-- Excel Templates Menu -->
-    <menuitem id="menu_excel_template"
-              name="Excel Templates"
-              parent="menu_concrete_configuration"
-              action="action_excel_template"
-              sequence="10"/>
-
-    <!-- Field Mappings Menu -->
-    <menuitem id="menu_excel_field_mapping"
-              name="Field Mappings"
-              parent="menu_concrete_configuration"
-              action="action_excel_field_mapping"
-              sequence="20"/>
+    <menuitem id="menu_concrete_configuration" name="Configuration" parent="menu_concrete_order_root" sequence="20"/>
+    <menuitem id="menu_concrete_fleet_config" name="Fleet" parent="menu_concrete_configuration" sequence="1"/>
+    <menuitem id="menu_concrete_vehicle_model" name="Vehicle Models" parent="menu_concrete_fleet_config" action="action_concrete_vehicle_model" sequence="1"/>
+    <menuitem id="menu_concrete_vehicle_brand" name="Vehicle Brands" parent="menu_concrete_fleet_config" action="action_concrete_vehicle_brand" sequence="2"/>
+    
+    <menuitem id="menu_concrete_templates" name="Templates" parent="menu_concrete_configuration" sequence="2"/>
+    <menuitem id="menu_excel_template" name="Excel Templates" parent="menu_concrete_templates" action="action_excel_template" sequence="1"/>
+    <menuitem id="menu_excel_field_mapping" name="Field Mappings" parent="menu_concrete_templates" action="action_excel_field_mapping" sequence="2"/>
 </odoo>

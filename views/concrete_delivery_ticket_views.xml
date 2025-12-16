@@ -11,8 +11,8 @@
                 <field name="site_name" optional="show"/>
                 <field name="product_id" optional="hide"/>
                 <field name="volume_m3" sum="Total Volume" widget="float" decoration-bf="1" decoration-success="volume_m3 &gt; 0"/>
-                <field name="driver_name_text" optional="hide"/>
-                <field name="vehicle_no" optional="show" decoration-bf="1"/>
+                <field name="driver_name" optional="hide"/>
+                <field name="vehicle_plate" optional="show" decoration-bf="1"/>
                 <field name="is_delayed" optional="hide" widget="boolean"/>
                 <field name="state" widget="badge" decoration-success="state == 'done'" decoration-info="state == 'in_transit'" decoration-warning="state == 'delivered'"/>
             </list>
@@ -26,6 +26,7 @@
             <form string="Concrete Delivery Ticket">
                 <header>
                     <button name="action_confirm" string="Confirm" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_print_document" string="Print" type="object" invisible="not generated_document_id" class="btn-primary"/>
                     <button name="action_in_transit" string="In Transit" type="object" invisible="state != 'confirmed'" class="oe_highlight"/>
                     <button name="action_delivered" string="Mark Delivered" type="object" invisible="state != 'in_transit'" class="oe_highlight"/>
                     <button name="action_done" string="Done" type="object" invisible="state != 'delivered'" class="oe_highlight"/>
@@ -110,14 +111,14 @@
                             <group>
                                 <group string="Driver">
                                     <field name="driver_id" options="{'no_create': True}"/>
-                                    <field name="driver_name_text"/>
+                                    <field name="driver_name" readonly="1"/>
                                     <field name="driver_phone" readonly="1"/>
                                     <field name="driver_performance"/>
                                 </group>
                                 <group string="Vehicle">
-                                    <field name="vehicle_no"/>
-                                    <field name="trailer_no"/>
-                                    <field name="pump_status"/>
+                                    <field name="vehicle_id" options="{'no_create': True}"/>
+                                    <field name="vehicle_plate" readonly="1"/>
+                                    <field name="vehicle_capacity" readonly="1"/>
                                 </group>
                             </group>
                         </page>
@@ -170,8 +171,8 @@
                 <field name="name" filter_domain="['|', ('name', 'ilike', self), ('ticket_serial_no', 'ilike', self)]" string="Ticket/Serial"/>
                 <field name="customer_id"/>
                 <field name="site_name"/>
-                <field name="driver_name_text"/>
-                <field name="vehicle_no"/>
+                <field name="driver_id"/>
+                <field name="vehicle_id"/>
                 <field name="product_id"/>
                 <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
                 <filter string="Confirmed" name="confirmed" domain="[('state', '=', 'confirmed')]"/>
@@ -190,8 +191,8 @@
                     <filter string="Status" name="group_state" domain="[]" context="{'group_by':'state'}"/>
                     <filter string="Customer" name="group_customer" domain="[]" context="{'group_by':'customer_id'}"/>
                     <filter string="Site" name="group_site" domain="[]" context="{'group_by':'site_name'}"/>
-                    <filter string="Driver" name="group_driver" domain="[]" context="{'group_by':'driver_name_text'}"/>
-                    <filter string="Vehicle" name="group_vehicle" domain="[]" context="{'group_by':'vehicle_no'}"/>
+                    <filter string="Driver" name="group_driver" domain="[]" context="{'group_by':'driver_id'}"/>
+                    <filter string="Vehicle" name="group_vehicle" domain="[]" context="{'group_by':'vehicle_id'}"/>
                     <filter string="Date" name="group_date" domain="[]" context="{'group_by':'delivery_date:day'}"/>
                     <filter string="Week" name="group_week" domain="[]" context="{'group_by':'delivery_date:week'}"/>
                     <filter string="Month" name="group_month" domain="[]" context="{'group_by':'delivery_date:month'}"/>
@@ -210,8 +211,8 @@
                 <field name="customer_id"/>
                 <field name="site_name"/>
                 <field name="volume_m3"/>
-                <field name="vehicle_no"/>
-                <field name="driver_name_text"/>
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
                 <field name="product_id"/>
                 <field name="state"/>
                 <field name="is_delayed"/>
@@ -239,7 +240,7 @@
                                 </div>
                             </div>
                             <div class="o_kanban_record_bottom mt-2 pt-2 border-top">
-                                <div class="text-muted small"><i class="fa fa-truck" title="Vehicle"/> <t t-out="record.vehicle_no.value"/> | <i class="fa fa-user" title="Driver"/> <t t-out="record.driver_name_text.value"/></div>
+                                <div class="text-muted small"><i class="fa fa-truck" title="Vehicle"/> <t t-out="record.vehicle_id.value"/> | <i class="fa fa-user" title="Driver"/> <t t-out="record.driver_id.value"/></div>
                             </div>
                         </div>
                     </t>

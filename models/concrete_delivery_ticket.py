@@ -57,13 +57,13 @@ class ConcreteDeliveryTicket(models.Model):
     product_uom_id = fields.Many2one('uom.uom', string='Unit of Measure', default=lambda self: self.env.ref('uom.product_uom_cubic_meter', raise_if_not_found=False))
     
     # Driver & Vehicle
-    driver_id = fields.Many2one('hr.employee', string='Driver', domain=[('job_title', '=', 'Mixer Driver')], tracking=True)
-    driver_name_text = fields.Char(string='Driver Name Text')
-    driver_phone = fields.Char(related='driver_id.work_phone', string='Driver Phone', readonly=True)
-    vehicle_no = fields.Char(string='Vehicle No.', required=True, tracking=True)
-    trailer_no = fields.Char(string='Trailer No.')
-    pump_status = fields.Selection([('yes', 'Yes'), ('no', 'No')], string='Pump')
-    driver_performance = fields.Selection([('bad', 'Bad'), ('fair', 'Fair'), ('good', 'Good')], string="Driver's Performance")
+    driver_id = fields.Many2one('concrete.driver', string='Driver', tracking=True, index=True)
+    driver_name = fields.Char(related='driver_id.name', string='Driver Name', readonly=True, store=True)
+    driver_phone = fields.Char(related='driver_id.phone', string='Driver Phone', readonly=True)
+    vehicle_id = fields.Many2one('concrete.vehicle', string='Vehicle', required=True, tracking=True, index=True)
+    vehicle_plate = fields.Char(related='vehicle_id.license_plate', string='License Plate', readonly=True, store=True)
+    vehicle_capacity = fields.Float(related='vehicle_id.capacity_m3', string='Vehicle Capacity', readonly=True)
+    driver_performance = fields.Selection([('bad', 'Bad'), ('fair', 'Fair'), ('good', 'Good'), ('excellent', 'Excellent')], string="Driver's Performance")
     
     # Time Tracking
     time_ex_plant = fields.Datetime(string='Time Ex-Plant')
@@ -154,8 +154,13 @@ class ConcreteDeliveryTicket(models.Model):
 
     @api.onchange('driver_id')
     def _onchange_driver_id(self):
-        if self.driver_id:
-            self.driver_name_text = self.driver_id.name
+        if self.driver_id and self.driver_id.vehicle_id:
+            self.vehicle_id = self.driver_id.vehicle_id
+
+    @api.onchange('vehicle_id')
+    def _onchange_vehicle_id(self):
+        if self.vehicle_id and self.vehicle_id.driver_id:
+            self.driver_id = self.vehicle_id.driver_id
 
     def action_confirm(self):
         self.write({'state': 'confirmed', 'time_ex_plant': fields.Datetime.now()})
@@ -240,3 +245,4 @@ class ConcreteDeliveryTicket(models.Model):
         if not self.generated_document_id:
             raise UserError(_('No document generated yet. Please generate Excel first.'))
         return {'type': 'ir.actions.client', 'tag': 'action_print_spreadsheet', 'params': {'spreadsheet_id': self.generated_document_id.id}}
+

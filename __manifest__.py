@@ -14,8 +14,11 @@
     'website': 'https://www.yourcompany.com',
     'depends': ['base', 'mail', 'hr', 'documents', 'documents_spreadsheet'],
     'data': [
+        'security/concrete_order_security.xml',
         'security/ir.model.access.csv',
         'data/sequence.xml',
+        'views/concrete_vehicle_views.xml',
+        'views/concrete_driver_views.xml',
         'views/concrete_delivery_ticket_views.xml',
         'views/excel_template_views.xml',
         'views/excel_field_mapping_views.xml',
