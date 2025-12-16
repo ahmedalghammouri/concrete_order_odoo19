@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_picking_form_inherit_concrete_ticket" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.concrete.ticket</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_delivery_tickets" type="object" class="oe_stat_button" icon="fa-file-text-o" invisible="picking_type_code != 'outgoing'">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value"><field name="ticket_count"/></span>
+                        <span class="o_stat_text">Tickets</span>
+                    </div>
+                    <div class="o_field_widget o_stat_info" style="margin-top: 5px;">
+                        <span class="o_stat_value" style="font-size: 14px; color: #00aa00;"><field name="total_volume_display"/></span>
+                        <span class="o_stat_text" style="font-size: 11px;">Total Volume</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
