@@ -5,32 +5,55 @@
         <field name="model">concrete.delivery.ticket</field>
         <field name="inherit_id" ref="concrete_order.view_concrete_delivery_ticket_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//group[@name='customer_info']" position="after">
-                <group name="stock_operations" string="Stock Operations">
-                    <group>
-                        <field name="delivery_id" domain="[('partner_id', '=', customer_id), ('picking_type_code', '=', 'outgoing'), ('state', 'in', ['draft', 'waiting', 'confirmed', 'assigned'])]"/>
+            <xpath expr="//page[@name='delivery']" position="before">
+                <page string="Stock Integration" name="stock_integration">
+                    <group name="stock_operations" string="Stock Operations">
+                        <group>
+                            <field name="delivery_id" domain="[('partner_id', '=', customer_id), ('picking_type_code', '=', 'outgoing'), ('state', 'in', ['draft', 'waiting', 'confirmed', 'assigned'])]"/>
+                            <field name="location_id" readonly="delivery_id" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="source_document" readonly="1"/>
+                            <field name="scheduled_date" readonly="1"/>
+                            <label for="demand_qty" string="Demand Quantity"/>
+                            <div>
+                                <field name="demand_qty" readonly="1" style="display: inline-block;"/> 
+                                <field name="product_uom_name" readonly="1" nolabel="1" style="display: inline-block; margin-left: 5px;"/>
+                            </div>
+                        </group>
                     </group>
-                    <group>
-                        <field name="location_id" readonly="delivery_id" force_save="1"/>
+                    <div class="alert alert-info" role="alert" invisible="not delivery_id or state == 'draft'" style="margin-bottom: 10px;">
+                        <strong>Visual Indicators:</strong>
+                        <ul style="margin-bottom: 0; padding-left: 20px;">
+                            <li><strong>Remaining Qty:</strong> <span style="color: #d9534f;">Red</span> if positive (under-delivery), <span style="color: #5cb85c;">Green</span> if zero/negative (fulfilled/over-delivered)</li>
+                            <li><strong>Variance:</strong> <span style="color: #5cb85c;">Green</span> if positive/zero (met or exceeded), <span style="color: #f0ad4e;">Orange</span> if negative (short)</li>
+                            <li><strong>Variance %:</strong> <span style="color: #5cb85c;">Green</span> if within ±5%, <span style="color: #f0ad4e;">Orange</span> if outside that range</li>
+                            <li><strong>Fulfillment %:</strong> <span style="color: #5cb85c;">Green</span> if ≥95%, <span style="color: #f0ad4e;">Orange</span> if 90-95%, <span style="color: #d9534f;">Red</span> if &lt;90%</li>
+                        </ul>
+                    </div>
+                    <group string="Quantity Analysis" invisible="not delivery_id or state == 'draft'">
+                        <group>
+                            <label for="remaining_qty" string="Remaining Quantity"/>
+                            <div>
+                                <field name="remaining_qty" readonly="1" decoration-danger="remaining_qty &gt; 0" decoration-success="remaining_qty &lt;= 0" style="font-size: 14px; font-weight: 500; display: inline-block;"/> 
+                                <span style="font-size: 13px; color: #6c757d; margin-left: 5px;">M³</span>
+                            </div>
+                            <label for="variance_qty" string="Variance"/>
+                            <div>
+                                <field name="variance_qty" readonly="1" decoration-success="variance_qty &gt;= 0" decoration-warning="variance_qty &lt; 0" style="font-size: 14px; font-weight: 500; display: inline-block;"/> 
+                                <span style="font-size: 13px; color: #6c757d; margin-left: 5px;">M³</span>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="variance_percent" readonly="1" widget="percentage" decoration-success="variance_percent &gt;= -0.05 and variance_percent &lt;= 0.05" decoration-warning="variance_percent &lt; -0.05 or variance_percent &gt; 0.05" style="font-size: 14px; font-weight: 500;"/>
+                            <field name="fulfillment_percent" readonly="1" widget="percentage" decoration-success="fulfillment_percent &gt;= 0.95" decoration-warning="fulfillment_percent &lt; 0.95 and fulfillment_percent &gt;= 0.90" decoration-danger="fulfillment_percent &lt; 0.90" style="font-size: 14px; font-weight: 500;"/>
+                        </group>
                     </group>
-                </group>
-                <group name="transfer_info" string="Transfer Information" invisible="not delivery_id">
-                    <group>
-                        <field name="source_document" readonly="1"/>
-                        <field name="scheduled_date" readonly="1"/>
-                    </group>
-                    <group>
-                        <label for="demand_qty" string="Demand Quantity"/>
-                        <div>
-                            <field name="demand_qty" readonly="1" style="display: inline-block;"/> 
-                            <field name="product_uom_name" readonly="1" nolabel="1" style="display: inline-block; margin-left: 5px;"/>
-                        </div>
-                    </group>
-                </group>
+                </page>
             </xpath>
-            <xpath expr="//header" position="inside">
+            <button name="action_done" position="after">
                 <button name="action_update_delivery" type="object" string="Update Delivery" class="btn-primary" invisible="not delivery_id or state not in ['delivered', 'done']"/>
-            </xpath>
+            </button>
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_view_delivery" type="object" class="oe_stat_button" icon="fa-truck" invisible="not delivery_id">
                     <div class="o_stat_info">
@@ -38,33 +61,7 @@
                     </div>
                 </button>
             </xpath>
-            <xpath expr="//field[@name='delivery_note']" position="before">
-                <div class="alert alert-info" role="alert" invisible="not delivery_id or state == 'draft'" style="margin-bottom: 10px;">
-                    <strong>Visual Indicators:</strong>
-                    <ul style="margin-bottom: 0; padding-left: 20px;">
-                        <li><strong>Remaining Qty:</strong> <span style="color: #d9534f;">Red</span> if positive (under-delivery), <span style="color: #5cb85c;">Green</span> if zero/negative (fulfilled/over-delivered)</li>
-                        <li><strong>Variance:</strong> <span style="color: #5cb85c;">Green</span> if positive/zero (met or exceeded), <span style="color: #f0ad4e;">Orange</span> if negative (short)</li>
-                        <li><strong>Variance %:</strong> <span style="color: #5cb85c;">Green</span> if within ±5%, <span style="color: #f0ad4e;">Orange</span> if outside that range</li>
-                        <li><strong>Fulfillment %:</strong> <span style="color: #5cb85c;">Green</span> if ≥95%, <span style="color: #f0ad4e;">Orange</span> if 90-95%, <span style="color: #d9534f;">Red</span> if &lt;90%</li>
-                    </ul>
-                </div>
-                <group string="Quantity Analysis" invisible="not delivery_id or state == 'draft'">
-                    <group>
-                        <label for="remaining_qty" string="Remaining Quantity"/>
-                        <div>
-                            <field name="remaining_qty" readonly="1" decoration-danger="remaining_qty &gt; 0" decoration-success="remaining_qty &lt;= 0" style="font-size: 14px; font-weight: 500; display: inline-block;"/> 
-                            <span style="font-size: 13px; color: #6c757d; margin-left: 5px;">M³</span>
-                        </div>
-                        <label for="variance_qty" string="Variance"/>
-                        <div>
-                            <field name="variance_qty" readonly="1" decoration-success="variance_qty &gt;= 0" decoration-warning="variance_qty &lt; 0" style="font-size: 14px; font-weight: 500; display: inline-block;"/> 
-                            <span style="font-size: 13px; color: #6c757d; margin-left: 5px;">M³</span>
-                        </div>
-                        <field name="variance_percent" readonly="1" widget="percentage" decoration-success="variance_percent &gt;= -0.05 and variance_percent &lt;= 0.05" decoration-warning="variance_percent &lt; -0.05 or variance_percent &gt; 0.05" style="font-size: 14px; font-weight: 500;"/>
-                        <field name="fulfillment_percent" readonly="1" widget="percentage" decoration-success="fulfillment_percent &gt;= 0.95" decoration-warning="fulfillment_percent &lt; 0.95 and fulfillment_percent &gt;= 0.90" decoration-danger="fulfillment_percent &lt; 0.90" style="font-size: 14px; font-weight: 500;"/>
-                    </group>
-                </group>
-            </xpath>
+
         </field>
     </record>
 
