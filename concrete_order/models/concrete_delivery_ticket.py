@@ -202,8 +202,13 @@ class ConcreteDeliveryTicket(models.Model):
                 
                 for mapping in self.template_id.mapping_ids:
                     value = self[mapping.field_name]
+                    # print(hasattr(value, 'name')) 
+                    # print(value)
+                    # print('---' )      
                     if hasattr(value, 'name'):
                         value = value.name
+                        # print(hasattr(value, 'name'))
+                        # print(value)
                     sheet['cells'][mapping.cell_location] = str(value or '')
         except Exception as e:
             raise UserError(_('Error processing template: %s') % str(e))

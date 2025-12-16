@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_concrete_delivery_ticket_user,concrete.delivery.ticket.user,model_concrete_delivery_ticket,group_concrete_user,1,1,1,0
+access_concrete_delivery_ticket_user,concrete.delivery.ticket.user,model_concrete_delivery_ticket,group_concrete_user,1,1,1,1
 access_concrete_delivery_ticket_manager,concrete.delivery.ticket.manager,model_concrete_delivery_ticket,group_concrete_manager,1,1,1,1
 access_concrete_vehicle_user,concrete.vehicle.user,model_concrete_vehicle,group_concrete_user,1,1,1,0
 access_concrete_vehicle_manager,concrete.vehicle.manager,model_concrete_vehicle,group_concrete_manager,1,1,1,1
