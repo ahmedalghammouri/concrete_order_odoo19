@@ -1,7 +1,7 @@
 {
     'name': 'Concrete Order Management',
     'version': '19.0.1.0.0',
-    'category': 'Operations',
+    'category': 'Concrete/Delivery',
     'summary': 'Specialized Projects Ready Mix Concrete Delivery Ticket Management',
     'description': """
         Concrete Delivery Ticket Management System

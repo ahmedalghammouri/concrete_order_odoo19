@@ -20,7 +20,6 @@ registry.category("actions").add("action_print_spreadsheet", async function (_, 
                 script.textContent = `
                     (function() {
                         console.log('Waiting for spreadsheet to load...');
-                        
                         function waitAndTriggerPrint() {
                             setTimeout(() => {
                                 console.log('Triggering Ctrl+P');
@@ -36,7 +35,6 @@ registry.category("actions").add("action_print_spreadsheet", async function (_, 
                                 
                                 setTimeout(() => {
                                     console.log('Closing window');
-                                    window.close();
                                 }, 5000);
                             }, 3000);
                         }
@@ -51,3 +49,5 @@ registry.category("actions").add("action_print_spreadsheet", async function (_, 
         console.error("Failed to open print window - popup blocked?");
     }
 });
+
+// window.close();
