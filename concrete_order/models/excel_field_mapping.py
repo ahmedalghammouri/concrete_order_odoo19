@@ -29,11 +29,11 @@ class ExcelFieldMapping(models.Model):
         ('slump_value', 'Slump'),
         ('volume_m3', 'Volume (C.U.M)'),
         ('total_volume_delivered', 'Total Delivered'),
-        ('driver_name_text', 'Driver Name'),
-        ('vehicle_no', 'Vehicle No.'),
+        ('driver_name', 'Driver Name'),
+        ('vehicle_plate', 'Vehicle Plate'),
         ('time_ex_plant', 'Time Ex-Plant'),
         ('time_on_site', 'Time On Site'),
         ('time_start_discharge', 'Time Start Discharge'),
         ('time_finish_discharge', 'Time Finish Discharge'),
-    ], string='Field', required=True)
+    ], string='Field', required=True, ondelete='cascade')
     cell_location = fields.Char(string='Cell Location (e.g., A1)', required=True)
