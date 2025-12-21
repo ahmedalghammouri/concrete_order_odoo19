@@ -7,6 +7,13 @@ class ConcreteDeliveryTicket(models.Model):
     sale_order_id = fields.Many2one('sale.order', string='Sale Order', ondelete='restrict', tracking=True)
     sale_line_id = fields.Many2one('sale.order.line', string='Sale Order Line', ondelete='restrict', tracking=True)
     
+    @api.onchange('delivery_id')
+    def _onchange_delivery_id_sale(self):
+        if self.delivery_id and self.delivery_id.sale_id:
+            self.sale_order_id = self.delivery_id.sale_id
+            if self.delivery_id.move_ids and self.delivery_id.move_ids[0].sale_line_id:
+                self.sale_line_id = self.delivery_id.move_ids[0].sale_line_id
+    
     @api.onchange('sale_order_id')
     def _onchange_sale_order_id(self):
         if self.sale_order_id:
