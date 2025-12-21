@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_concrete_cmdp_root" name="Concrete Delivery Point" sequence="50" web_icon="concrete_order_cmdp,static/description/icon.png"/>
+    <menuitem id="menu_concrete_cmdp_interface" name="Delivery Point Interface" parent="menu_concrete_cmdp_root" action="action_concrete_delivery_cmdp_interface" sequence="10"/>
+    <menuitem id="menu_concrete_cmdp_sessions" name="Sessions" parent="menu_concrete_cmdp_root" action="action_concrete_delivery_cmdp" sequence="20"/>
+</odoo>

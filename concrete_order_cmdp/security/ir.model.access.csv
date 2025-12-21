@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_concrete_delivery_cmdp_user,concrete.delivery.cmdp.user,model_concrete_delivery_cmdp,concrete_order.group_concrete_user,1,1,1,0
+access_concrete_delivery_cmdp_manager,concrete.delivery.cmdp.manager,model_concrete_delivery_cmdp,concrete_order.group_concrete_manager,1,1,1,1

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="concrete_order_cmdp.CMDPInterface">
+        <div class="weighing_weighpoint_interface">
+            <div class="container-fluid" t-if="!state.loading">
+                <!-- Professional Header -->
+                <div class="weighpoint_header_new">
+                    <div class="header_top">
+                        <div class="header_brand">
+                            <i class="fa fa-truck-loading" style="font-size: 1.8rem; margin-right: 12px;"/>
+                            <div>
+                                <h1 style="margin: 0; font-size: 1.5rem; font-weight: 700;">Concrete Mixer Delivery Point</h1>
+                                <small style="color: #6c757d; font-size: 0.85rem;">Fast Delivery Management</small>
+                            </div>
+                        </div>
+                        <div class="header_actions_new">
+                            <div class="header_info">
+                                <i class="fa fa-clock"/>
+                                <span t-esc="this.getLastRefreshTime()"/>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary" t-on-click="() => this.refreshData()">
+                                <i class="fa fa-sync-alt"/> Refresh
+                            </button>
+                            <button class="btn btn-sm btn-primary" t-on-click="() => this.createNewDelivery()">
+                                <i class="fa fa-plus"/> New (F1)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="header_tabs">
+                        <div class="nav nav-tabs">
+                            <a t-att-class="'nav-link ' + (state.activeTab === 'overview' ? 'active' : '')" t-on-click="() => this.setActiveTab('overview')">
+                                <i class="fa fa-tachometer-alt"/> <span>Overview</span>
+                            </a>
+                            <a t-att-class="'nav-link ' + (state.activeTab === 'deliveries' ? 'active' : '')" t-on-click="() => this.setActiveTab('deliveries')">
+                                <i class="fa fa-truck"/> <span>Deliveries</span> <span class="badge" t-esc="state.deliveries.length"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Barcode Scanner Bar -->
+                <div class="barcode_scanner_bar">
+                    <div class="scanner_container">
+                        <i class="fa fa-barcode scanner_icon"/>
+                        <input type="text" 
+                               class="form-control scanner_input" 
+                               placeholder="Scan or enter barcode / ticket number..."
+                               t-model="state.barcode"
+                               t-on-keydown="(ev) => ev.key === 'Enter' &amp;&amp; state.barcode ? this.scanBarcode() : null"/>
+                        <button class="btn btn-success scanner_btn" t-on-click="() => this.scanBarcode()">
+                            <i class="fa fa-search"/> Scan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab: Overview -->
+                <div t-if="state.activeTab === 'overview'">
+                    <!-- Analytics -->
+                    <div class="analytics_section">
+                        <div class="analytics_row">
+                            <div class="analytics_card" style="border-left: 4px solid #28a745;">
+                                <div class="analytics_header">
+                                    <small>Today's Deliveries</small>
+                                    <i class="fa fa-chart-line text-success"/>
+                                </div>
+                                <div class="analytics_value">
+                                    <h2 t-esc="state.analytics?.completed_today || 0"/>
+                                    <span>completed</span>
+                                </div>
+                                <div class="analytics_footer">
+                                    <small><i class="fa fa-clock"/> <t t-esc="state.analytics?.in_progress || 0"/> in progress</small>
+                                </div>
+                            </div>
+
+                            <div class="analytics_card" style="border-left: 4px solid #667eea;">
+                                <div class="analytics_header">
+                                    <small>Avg Delivery Time</small>
+                                    <i class="fa fa-hourglass-half text-primary"/>
+                                </div>
+                                <div class="analytics_value">
+                                    <h2 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" t-esc="state.analytics?.avg_time || '0m'"/>
+                                </div>
+                                <div class="analytics_footer">
+                                    <small><i class="fa fa-truck"/> <t t-esc="state.analytics?.waiting_count || 0"/> waiting</small>
+                                </div>
+                            </div>
+
+                            <div class="analytics_card" style="border-left: 4px solid #ffc107;">
+                                <div class="analytics_header">
+                                    <small>Pending Deliveries</small>
+                                    <i class="fa fa-inbox text-warning"/>
+                                </div>
+                                <div class="analytics_value">
+                                    <h2 t-esc="state.deliveries?.length || 0"/>
+                                    <span>tickets</span>
+                                </div>
+                            </div>
+
+                            <div class="analytics_card" style="border-left: 4px solid #17a2b8;">
+                                <div class="analytics_header">
+                                    <small>Total Volume Today</small>
+                                    <i class="fa fa-cubes text-info"/>
+                                </div>
+                                <div class="analytics_value">
+                                    <h2 style="background: linear-gradient(135deg, #17a2b8 0%, #138496 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" t-esc="(state.analytics?.total_volume_today || 0) + ' M³'"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="weighpoint_content" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 20px;">
+                        <div class="section_card" style="cursor: pointer;" t-on-click="() => this.openDeliveryList('draft')">
+                            <div class="section_header" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                                <h3><i class="fa fa-file"/> Draft</h3>
+                                <h2 style="margin: 0; color: white;" t-esc="state.quickStats?.draft || 0"/>
+                            </div>
+                        </div>
+                        <div class="section_card" style="cursor: pointer;" t-on-click="() => this.openDeliveryList('in_progress')">
+                            <div class="section_header" style="background: linear-gradient(135deg, #17a2b8 0%, #117a8b 100%);">
+                                <h3><i class="fa fa-truck"/> In Progress</h3>
+                                <h2 style="margin: 0; color: white;" t-esc="(state.quickStats?.confirmed || 0) + (state.quickStats?.in_transit || 0)"/>
+                            </div>
+                        </div>
+                        <div class="section_card" style="cursor: pointer;" t-on-click="() => this.openDeliveryList('done')">
+                            <div class="section_header" style="background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);">
+                                <h3><i class="fa fa-check-circle"/> Completed</h3>
+                                <h2 style="margin: 0; color: white;" t-esc="state.analytics?.completed_today || 0"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="weighpoint_content" style="grid-template-columns: 1fr;">
+                        <div class="section_card">
+                            <div class="section_header">
+                                <h3><i class="fa fa-history"/> Recent Activity</h3>
+                            </div>
+                            <div class="scrollable_list" style="max-height: 400px; padding: 0.5rem;">
+                                <t t-if="state.recentActivity.length === 0">
+                                    <div class="empty_state">No recent activity</div>
+                                </t>
+                                <t t-foreach="state.recentActivity" t-as="activity" t-key="activity.id">
+                                    <div style="padding: 10px 12px; margin-bottom: 8px; border-radius: 8px; cursor: pointer; transition: all 0.2s; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.02) 100%); border-left: 3px solid;" 
+                                         t-att-style="'border-left-color: ' + this.getActivityColor(activity.state)"
+                                         t-on-click="() => this.openDelivery(activity.id)">
+                                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                                            <div style="flex: 1;">
+                                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                                                    <i t-att-class="'fa ' + this.getActivityIcon(activity.state)" t-att-style="'color: ' + this.getActivityColor(activity.state)"/>
+                                                    <strong style="font-size: 0.95rem;" t-esc="activity.name"/>
+                                                    <span class="badge badge-sm" t-att-style="'background: ' + this.getActivityColor(activity.state) + '; color: white; font-size: 0.65rem; padding: 2px 6px;'" t-esc="this.getStateLabel(activity.state)"/>
+                                                </div>
+                                                <div style="font-size: 0.8rem; opacity: 0.7; display: flex; gap: 12px;">
+                                                    <span t-if="activity.customer_id"><i class="fa fa-user"/> <t t-esc="activity.customer_id[1]"/></span>
+                                                    <span t-if="activity.vehicle_id"><i class="fa fa-truck"/> <t t-esc="activity.vehicle_id[1]"/></span>
+                                                    <span t-if="activity.volume_m3"><i class="fa fa-cubes"/> <t t-esc="activity.volume_m3 + ' M³'"/></span>
+                                                </div>
+                                            </div>
+                                            <small class="text-muted" style="white-space: nowrap; font-size: 0.75rem;" t-esc="this.getActivityTime(activity.write_date)"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Deliveries -->
+                <div t-if="state.activeTab === 'deliveries'">
+                    <div class="input_section">
+                        <div class="input_row">
+                            <div class="input_group">
+                                <label>🔍 Search:</label>
+                                <input type="text" 
+                                       class="form-control form-control-lg" 
+                                       placeholder="Search deliveries..."
+                                       t-model="state.searchText"
+                                       t-on-keydown="(ev) => ev.key === 'Enter' ? this.onSearch() : null"/>
+                                <button class="btn btn-info btn-lg" t-on-click="() => this.onSearch()">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weighpoint_content" style="grid-template-columns: 1fr;">
+                        <div class="section_card">
+                            <div class="section_header">
+                                <h3>🚚 Pending Deliveries</h3>
+                            </div>
+                            <div class="scrollable_list">
+                                <t t-if="state.deliveries.length === 0">
+                                    <div class="empty_state">No pending deliveries</div>
+                                </t>
+                                <t t-foreach="state.deliveries" t-as="delivery" t-key="delivery.id">
+                                    <div class="card_item workflow_card" t-on-click="() => this.openDelivery(delivery.id)">
+                                        <div class="card_header">
+                                            <span class="card_name">
+                                                🚛 <t t-esc="delivery.name"/>
+                                            </span>
+                                            <span t-attf-class="badge badge-{{delivery.state === 'draft' ? 'secondary' : delivery.state === 'confirmed' ? 'info' : 'warning'}}">
+                                                <t t-esc="this.getStateLabel(delivery.state)"/>
+                                            </span>
+                                        </div>
+                                        
+                                        <!-- Workflow Progress Bar -->
+                                        <div class="workflow_progress">
+                                            <div class="progress" style="height: 8px; margin: 8px 0;">
+                                                <div class="progress-bar" 
+                                                     t-att-style="'width: ' + this.getWorkflowProgress(delivery.state) + '%; background-color: ' + this.getWorkflowColor(delivery.state)"/>
+                                            </div>
+                                            <div class="workflow_steps">
+                                                <span t-att-class="'step ' + (delivery.state === 'draft' ? 'active' : 'completed')">Draft</span>
+                                                <span t-att-class="'step ' + (delivery.state === 'confirmed' ? 'active' : delivery.state === 'in_transit' || delivery.state === 'delivered' || delivery.state === 'done' ? 'completed' : '')">Confirmed</span>
+                                                <span t-att-class="'step ' + (delivery.state === 'in_transit' ? 'active' : delivery.state === 'delivered' || delivery.state === 'done' ? 'completed' : '')">In Transit</span>
+                                                <span t-att-class="'step ' + (delivery.state === 'delivered' ? 'active' : delivery.state === 'done' ? 'completed' : '')">Delivered</span>
+                                                <span t-att-class="'step ' + (delivery.state === 'done' ? 'active completed' : '')">Done</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card_details">
+                                            <div><strong>Customer:</strong> <t t-esc="delivery.customer_id[1]"/></div>
+                                            <div><strong>Site:</strong> <t t-esc="delivery.site_name"/></div>
+                                            <div t-if="delivery.vehicle_id"><strong>Vehicle:</strong> <t t-esc="delivery.vehicle_id[1]"/></div>
+                                            <div t-if="delivery.driver_id"><strong>Driver:</strong> <t t-esc="delivery.driver_id[1]"/></div>
+                                            <div><strong>Volume:</strong> <t t-esc="delivery.volume_m3"/> M³</div>
+                                            <div t-if="delivery.mix_description"><strong>Mix:</strong> <t t-esc="delivery.mix_description"/></div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="text-center p-5" t-if="state.loading">
+                <i class="fa fa-spinner fa-spin fa-3x text-muted"/>
+                <p class="mt-3 text-muted">Loading dashboard data...</p>
+            </div>
+        </div>
+    </t>
+</templates>

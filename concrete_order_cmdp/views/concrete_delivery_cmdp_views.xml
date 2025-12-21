@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- CMDP Session Form View -->
+    <record id="view_concrete_delivery_cmdp_form" model="ir.ui.view">
+        <field name="name">concrete.delivery.cmdp.form</field>
+        <field name="model">concrete.delivery.cmdp</field>
+        <field name="arch" type="xml">
+            <form string="CMDP Session">
+                <header>
+                    <button name="action_close_session" string="Close Session" type="object" 
+                            class="oe_highlight" invisible="state == 'closed'"/>
+                    <button name="action_reopen_session" string="Reopen Session" type="object" 
+                            class="btn-warning" invisible="state == 'open'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <group>
+                            <field name="delivery_count"/>
+                            <field name="completed_count"/>
+                            <field name="total_volume"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Deliveries">
+                            <field name="delivery_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="delivery_date"/>
+                                    <field name="customer_id"/>
+                                    <field name="vehicle_id"/>
+                                    <field name="volume_m3"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- CMDP Session Tree View -->
+    <record id="view_concrete_delivery_cmdp_tree" model="ir.ui.view">
+        <field name="name">concrete.delivery.cmdp.tree</field>
+        <field name="model">concrete.delivery.cmdp</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="delivery_count"/>
+                <field name="completed_count"/>
+                <field name="total_volume"/>
+                <field name="state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- CMDP Session Action -->
+    <record id="action_concrete_delivery_cmdp" model="ir.actions.act_window">
+        <field name="name">CMDP Sessions</field>
+        <field name="res_model">concrete.delivery.cmdp</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- CMDP Interface Action -->
+    <record id="action_concrete_delivery_cmdp_interface" model="ir.actions.client">
+        <field name="name">Concrete Mixer Delivery Point</field>
+        <field name="tag">concrete_delivery_cmdp_interface</field>
+    </record>
+    
+    <!-- Extended Delivery Ticket Form View -->
+    <record id="view_concrete_delivery_ticket_cmdp_form" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.cmdp.form</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="inherit_id" ref="concrete_order.view_concrete_delivery_ticket_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="cmdp_session_id"/>
+                <field name="barcode"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="action_quick_dispatch" string="Quick Dispatch" type="object" 
+                        class="btn-success" invisible="state not in ['draft', 'confirmed']"/>
+                <button name="action_quick_deliver" string="Quick Deliver" type="object" 
+                        class="btn-info" invisible="state != 'in_transit'"/>
+                <button name="action_quick_complete" string="Quick Complete" type="object" 
+                        class="btn-primary" invisible="state not in ['in_transit', 'delivered']"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
