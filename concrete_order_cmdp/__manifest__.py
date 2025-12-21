@@ -16,7 +16,7 @@ Simplified interface for concrete delivery operations:
     'author': 'Gemy',
     'website': 'https://www.example.com',
     'license': 'LGPL-3',
-    'depends': ['concrete_order'],
+    'depends': ['concrete_order', 'concrete_order_stock_out'],
     'data': [
         'views/concrete_delivery_cmdp_views.xml',
         'views/menu_views.xml',

@@ -32,6 +32,12 @@
                             <a t-att-class="'nav-link ' + (state.activeTab === 'overview' ? 'active' : '')" t-on-click="() => this.setActiveTab('overview')">
                                 <i class="fa fa-tachometer-alt"/> <span>Overview</span>
                             </a>
+                            <a t-att-class="'nav-link ' + (state.activeTab === 'queue' ? 'active' : '')" t-on-click="() => this.setActiveTab('queue')">
+                                <i class="fa fa-list-ol"/> <span>Fleet Queue</span> <span class="badge" t-esc="state.fleetQueue.length"/>
+                            </a>
+                            <a t-att-class="'nav-link ' + (state.activeTab === 'orders' ? 'active' : '')" t-on-click="() => this.setActiveTab('orders')">
+                                <i class="fa fa-inbox"/> <span>Delivery Orders</span> <span class="badge" t-esc="state.deliveryOrders.length"/>
+                            </a>
                             <a t-att-class="'nav-link ' + (state.activeTab === 'deliveries' ? 'active' : '')" t-on-click="() => this.setActiveTab('deliveries')">
                                 <i class="fa fa-truck"/> <span>Deliveries</span> <span class="badge" t-esc="state.deliveries.length"/>
                             </a>
@@ -167,24 +173,81 @@
                     </div>
                 </div>
 
-                <!-- Tab: Deliveries -->
-                <div t-if="state.activeTab === 'deliveries'">
-                    <div class="input_section">
-                        <div class="input_row">
-                            <div class="input_group">
-                                <label>🔍 Search:</label>
-                                <input type="text" 
-                                       class="form-control form-control-lg" 
-                                       placeholder="Search deliveries..."
-                                       t-model="state.searchText"
-                                       t-on-keydown="(ev) => ev.key === 'Enter' ? this.onSearch() : null"/>
-                                <button class="btn btn-info btn-lg" t-on-click="() => this.onSearch()">
-                                    Search
-                                </button>
+                <!-- Tab: Fleet Queue -->
+                <div t-if="state.activeTab === 'queue'">
+                    <div class="queue_section">
+                        <h4><i class="fa fa-list-ol"/> Fleet Queue (<t t-esc="state.fleetQueue.length"/> vehicles)</h4>
+                        <div class="queue_list">
+                            <t t-if="state.fleetQueue.length === 0">
+                                <div class="empty_state">No vehicles in queue</div>
+                            </t>
+                            <t t-foreach="state.fleetQueue" t-as="truck" t-key="truck.id">
+                                <div t-att-class="'queue_item ' + (truck.is_urgent ? 'urgent' : '')" t-on-click="() => this.openDelivery(truck.id)">
+                                    <div class="queue_position" t-att-class="'badge badge-' + this.getQueueColor(truck.estimated_wait)">
+                                        #<t t-esc="truck.position"/>
+                                    </div>
+                                    <div class="queue_info">
+                                        <strong t-esc="truck.vehicle"/>
+                                        <small><t t-esc="truck.name"/> - <t t-esc="truck.driver"/></small>
+                                        <small t-if="truck.customer"><i class="fa fa-user"/> <t t-esc="truck.customer"/></small>
+                                    </div>
+                                    <div class="queue_time">
+                                        <div><i class="fa fa-clock"/> Waiting: <t t-esc="this.formatTime(truck.wait_time)"/></div>
+                                        <div><i class="fa fa-hourglass"/> Est: <t t-esc="this.formatTime(truck.estimated_wait)"/></div>
+                                        <div><i class="fa fa-cubes"/> <t t-esc="truck.volume + ' M³'"/></div>
+                                    </div>
+                                    <div t-if="truck.is_urgent" class="queue_urgent">
+                                        <i class="fa fa-exclamation-triangle"/> URGENT
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Delivery Orders -->
+                <div t-if="state.activeTab === 'orders'">
+                    <div class="weighpoint_content" style="grid-template-columns: 1fr;">
+                        <div class="section_card">
+                            <div class="section_header">
+                                <h3>📦 Delivery Orders</h3>
+                            </div>
+                            <div class="scrollable_list">
+                                <t t-if="state.deliveryOrders.length === 0">
+                                    <div class="empty_state">No delivery orders</div>
+                                </t>
+                                <t t-foreach="state.deliveryOrders" t-as="order" t-key="order.id">
+                                    <div t-att-class="'card_item' + (order.has_ticket ? ' in_progress' : '') + (this.isOverdue(order.scheduled_date) ? ' overdue-item' : '')" 
+                                         t-on-click="() => order.has_ticket ? this.openDelivery(order.ticket_id) : this.createFromDeliveryOrder(order.id)">
+                                        <div class="card_header">
+                                            <span class="card_name">
+                                                📤 <t t-esc="order.name"/>
+                                                <t t-if="this.isOverdue(order.scheduled_date)">
+                                                    <i class="fa fa-exclamation-circle text-danger" style="margin-left: 6px;"/>
+                                                </t>
+                                            </span>
+                                            <span t-attf-class="badge badge-{{order.has_ticket ? 'info' : 'warning'}}">
+                                                <t t-esc="order.has_ticket ? 'Has Ticket' : 'Create Ticket'"/>
+                                            </span>
+                                        </div>
+                                        <div class="card_details">
+                                            <div t-if="order.partner_id"><strong>Customer:</strong> <t t-esc="order.partner_id[1]"/></div>
+                                            <div t-if="order.scheduled_date" t-att-class="this.isOverdue(order.scheduled_date) ? 'text-danger' : ''">
+                                                <strong>Scheduled:</strong> <t t-esc="order.scheduled_date"/>
+                                                <t t-if="this.isOverdue(order.scheduled_date)"> (OVERDUE)</t>
+                                            </div>
+                                            <div t-if="order.origin"><strong>Origin:</strong> <t t-esc="order.origin"/></div>
+                                            <div><strong>Status:</strong> <t t-esc="this.getStateLabel(order.state)"/></div>
+                                        </div>
+                                    </div>
+                                </t>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- Tab: Deliveries -->
+                <div t-if="state.activeTab === 'deliveries'">
                     <div class="weighpoint_content" style="grid-template-columns: 1fr;">
                         <div class="section_card">
                             <div class="section_header">
@@ -227,6 +290,7 @@
                                             <div t-if="delivery.driver_id"><strong>Driver:</strong> <t t-esc="delivery.driver_id[1]"/></div>
                                             <div><strong>Volume:</strong> <t t-esc="delivery.volume_m3"/> M³</div>
                                             <div t-if="delivery.mix_description"><strong>Mix:</strong> <t t-esc="delivery.mix_description"/></div>
+                                            <div t-if="delivery.delivery_id"><strong>DO:</strong> <t t-esc="delivery.delivery_id[1]"/></div>
                                         </div>
                                     </div>
                                 </t>

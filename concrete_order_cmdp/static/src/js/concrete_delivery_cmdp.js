@@ -14,12 +14,14 @@ class ConcreteDeliveryCMDPInterface extends Component {
             activeTab: 'overview',
             barcode: "",
             deliveries: [],
+            deliveryOrders: [],
+            fleetQueue: [],
             searchText: "",
             selectedDelivery: null,
             analytics: {
                 completed_today: 0,
                 in_progress: 0,
-                avg_time: "0m",
+                avg_time: "15m",
                 waiting_count: 0,
                 total_volume_today: 0,
             },
@@ -37,6 +39,8 @@ class ConcreteDeliveryCMDPInterface extends Component {
 
         onWillStart(async () => {
             await this.loadDeliveries();
+            await this.loadDeliveryOrders();
+            await this.loadFleetQueue();
             await this.loadAnalytics();
             await this.loadRecentActivity();
         });
@@ -63,6 +67,30 @@ class ConcreteDeliveryCMDPInterface extends Component {
             );
         } catch (error) {
             this.notification.add("Failed to load deliveries", { type: "danger" });
+        }
+    }
+
+    async loadDeliveryOrders() {
+        try {
+            this.state.deliveryOrders = await this.orm.call(
+                "concrete.delivery.ticket",
+                "get_delivery_orders",
+                []
+            );
+        } catch (error) {
+            console.error("Error loading delivery orders:", error);
+        }
+    }
+
+    async loadFleetQueue() {
+        try {
+            this.state.fleetQueue = await this.orm.call(
+                "concrete.delivery.ticket",
+                "get_fleet_queue",
+                []
+            );
+        } catch (error) {
+            console.error("Error loading fleet queue:", error);
         }
     }
 
@@ -99,6 +127,29 @@ class ConcreteDeliveryCMDPInterface extends Component {
         }
     }
 
+    async createFromDeliveryOrder(deliveryId) {
+        try {
+            const ticket = await this.orm.call(
+                "concrete.delivery.ticket",
+                "create_from_delivery",
+                [deliveryId]
+            );
+            
+            if (ticket && ticket.id) {
+                this.action.doAction({
+                    type: "ir.actions.act_window",
+                    res_model: "concrete.delivery.ticket",
+                    res_id: ticket.id,
+                    views: [[false, "form"]],
+                    view_mode: "form",
+                    target: "current",
+                });
+            }
+        } catch (error) {
+            this.notification.add(error.message || "Error creating ticket", { type: "danger" });
+        }
+    }
+
     async openDelivery(deliveryId) {
         this.action.doAction({
             type: "ir.actions.act_window",
@@ -122,6 +173,7 @@ class ConcreteDeliveryCMDPInterface extends Component {
 
     async onSearch() {
         await this.loadDeliveries();
+        await this.loadDeliveryOrders();
     }
 
     setActiveTab(tab) {
@@ -134,7 +186,9 @@ class ConcreteDeliveryCMDPInterface extends Component {
             confirmed: 'Confirmed',
             in_transit: 'In Transit',
             delivered: 'Delivered',
-            done: 'Done'
+            done: 'Done',
+            assigned: 'Ready',
+            waiting: 'Waiting'
         };
         return labels[state] || state;
     }
@@ -203,6 +257,8 @@ class ConcreteDeliveryCMDPInterface extends Component {
     async refreshData() {
         try {
             await this.loadDeliveries();
+            await this.loadDeliveryOrders();
+            await this.loadFleetQueue();
             await this.loadAnalytics();
             await this.loadRecentActivity();
             this.state.lastRefresh = new Date();
@@ -304,6 +360,23 @@ class ConcreteDeliveryCMDPInterface extends Component {
             domain: domain,
             target: "current",
         });
+    }
+
+    getQueueColor(estimatedWait) {
+        if (estimatedWait <= 30) return 'success';
+        if (estimatedWait <= 45) return 'warning';
+        return 'danger';
+    }
+
+    formatTime(minutes) {
+        const h = Math.floor(minutes / 60);
+        const m = minutes % 60;
+        return h > 0 ? `${h}:${m.toString().padStart(2, '0')}` : `${m}m`;
+    }
+
+    isOverdue(scheduledDate) {
+        if (!scheduledDate) return false;
+        return new Date(scheduledDate) < new Date();
     }
 }
 
