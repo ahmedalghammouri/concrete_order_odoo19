@@ -546,6 +546,12 @@
                 border-color: rgba(23, 162, 184, 0.2);
             }
             
+            &.validated {
+                border-left: 4px solid #28a745;
+                background: linear-gradient(135deg, rgba(40, 167, 69, 0.12) 0%, rgba(30, 126, 52, 0.06) 100%);
+                border-color: rgba(40, 167, 69, 0.2);
+            }
+            
             &.overdue-item {
                 border-left: 4px solid #dc3545;
                 background: linear-gradient(135deg, rgba(220, 53, 69, 0.12) 0%, rgba(200, 35, 51, 0.06) 100%);

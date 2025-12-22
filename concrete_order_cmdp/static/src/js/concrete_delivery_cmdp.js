@@ -129,21 +129,14 @@ class ConcreteDeliveryCMDPInterface extends Component {
 
     async createFromDeliveryOrder(deliveryId) {
         try {
-            const ticket = await this.orm.call(
+            const result = await this.orm.call(
                 "concrete.delivery.ticket",
                 "create_from_delivery",
                 [deliveryId]
             );
             
-            if (ticket && ticket.id) {
-                this.action.doAction({
-                    type: "ir.actions.act_window",
-                    res_model: "concrete.delivery.ticket",
-                    res_id: ticket.id,
-                    views: [[false, "form"]],
-                    view_mode: "form",
-                    target: "current",
-                });
+            if (result && result.type) {
+                this.action.doAction(result);
             }
         } catch (error) {
             this.notification.add(error.message || "Error creating ticket", { type: "danger" });
@@ -154,6 +147,17 @@ class ConcreteDeliveryCMDPInterface extends Component {
         this.action.doAction({
             type: "ir.actions.act_window",
             res_model: "concrete.delivery.ticket",
+            res_id: deliveryId,
+            views: [[false, "form"]],
+            view_mode: "form",
+            target: "current",
+        });
+    }
+
+    async openDeliveryOrder(deliveryId) {
+        this.action.doAction({
+            type: "ir.actions.act_window",
+            res_model: "stock.picking",
             res_id: deliveryId,
             views: [[false, "form"]],
             view_mode: "form",

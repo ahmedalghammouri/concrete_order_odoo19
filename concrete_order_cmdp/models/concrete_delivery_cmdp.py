@@ -56,7 +56,16 @@ class ConcreteDeliveryTicket(models.Model):
         
         result = []
         for picking in pickings:
-            ticket = self.search([('delivery_id', '=', picking.id), ('state', 'in', ['draft', 'confirmed', 'in_transit'])], limit=1)
+            ticket = self.search([('delivery_id', '=', picking.id), ('state', '!=', 'cancel')], limit=1)
+            
+            # Determine status
+            if ticket and ticket.state == 'done':
+                status = 'validated'
+            elif ticket:
+                status = 'has_ticket'
+            else:
+                status = 'no_ticket'
+            
             result.append({
                 'id': picking.id,
                 'name': picking.name,
@@ -64,7 +73,7 @@ class ConcreteDeliveryTicket(models.Model):
                 'scheduled_date': picking.scheduled_date.isoformat() if picking.scheduled_date else False,
                 'origin': picking.origin,
                 'state': picking.state,
-                'has_ticket': bool(ticket),
+                'status': status,
                 'ticket_id': ticket.id if ticket else False,
             })
         return result
@@ -79,19 +88,16 @@ class ConcreteDeliveryTicket(models.Model):
         if existing:
             return existing.read(['id', 'name', 'delivery_date', 'customer_id', 'site_name', 'vehicle_id', 'driver_id', 'volume_m3', 'mix_description', 'state', 'barcode', 'delivery_id'])[0]
         
-        vals = {
-            'delivery_id': delivery_id,
-            'customer_id': delivery.partner_id.id,
-            'delivery_date': fields.Date.today(),
-            'site_name': delivery.partner_id.name,
+        # Open wizard to select vehicle
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Create Delivery Ticket',
+            'res_model': 'concrete.delivery.wizard',
+            'view_mode': 'form',
+            'views': [(False, 'form')],
+            'target': 'new',
+            'context': {'default_delivery_id': delivery_id}
         }
-        
-        if delivery.move_ids:
-            vals['product_id'] = delivery.move_ids[0].product_id.id
-            vals['volume_m3'] = delivery.move_ids[0].product_uom_qty
-        
-        ticket = self.create(vals)
-        return ticket.read(['id', 'name', 'delivery_date', 'customer_id', 'site_name', 'vehicle_id', 'driver_id', 'volume_m3', 'mix_description', 'state', 'barcode', 'delivery_id'])[0]
     
     @api.model
     def get_fleet_queue(self):

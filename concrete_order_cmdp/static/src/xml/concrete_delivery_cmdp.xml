@@ -217,8 +217,8 @@
                                     <div class="empty_state">No delivery orders</div>
                                 </t>
                                 <t t-foreach="state.deliveryOrders" t-as="order" t-key="order.id">
-                                    <div t-att-class="'card_item' + (order.has_ticket ? ' in_progress' : '') + (this.isOverdue(order.scheduled_date) ? ' overdue-item' : '')" 
-                                         t-on-click="() => order.has_ticket ? this.openDelivery(order.ticket_id) : this.createFromDeliveryOrder(order.id)">
+                                    <div t-att-class="'card_item' + (order.status === 'has_ticket' ? ' in_progress' : '') + (order.status === 'validated' ? ' validated' : '') + (this.isOverdue(order.scheduled_date) ? ' overdue-item' : '')" 
+                                         t-on-click="() => order.status === 'validated' ? this.openDeliveryOrder(order.id) : (order.status === 'has_ticket' ? this.openDelivery(order.ticket_id) : this.createFromDeliveryOrder(order.id))">
                                         <div class="card_header">
                                             <span class="card_name">
                                                 📤 <t t-esc="order.name"/>
@@ -226,8 +226,8 @@
                                                     <i class="fa fa-exclamation-circle text-danger" style="margin-left: 6px;"/>
                                                 </t>
                                             </span>
-                                            <span t-attf-class="badge badge-{{order.has_ticket ? 'info' : 'warning'}}">
-                                                <t t-esc="order.has_ticket ? 'Has Ticket' : 'Create Ticket'"/>
+                                            <span t-attf-class="badge badge-{{order.status === 'validated' ? 'success' : order.status === 'has_ticket' ? 'info' : 'warning'}}">
+                                                <t t-esc="order.status === 'validated' ? 'Validated' : order.status === 'has_ticket' ? 'Has Ticket' : 'Create Ticket'"/>
                                             </span>
                                         </div>
                                         <div class="card_details">

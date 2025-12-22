@@ -15,14 +15,7 @@
             <xpath expr="//field[@name='user_id']" position="after">
                 <field name="barcode"/>
             </xpath>
-            <xpath expr="//header" position="inside">
-                <button name="action_quick_dispatch" string="Quick Dispatch" type="object" 
-                        class="btn-success" invisible="state not in ['draft', 'confirmed']"/>
-                <button name="action_quick_deliver" string="Quick Deliver" type="object" 
-                        class="btn-info" invisible="state != 'in_transit'"/>
-                <button name="action_quick_complete" string="Quick Complete" type="object" 
-                        class="btn-primary" invisible="state not in ['in_transit', 'delivered']"/>
-            </xpath>
+
         </field>
     </record>
 </odoo>

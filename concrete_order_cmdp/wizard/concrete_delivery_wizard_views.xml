@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_concrete_delivery_wizard_form" model="ir.ui.view">
+        <field name="name">concrete.delivery.wizard.form</field>
+        <field name="model">concrete.delivery.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Delivery Ticket">
+                <group>
+                    <field name="delivery_id" invisible="1"/>
+                    <field name="sale_order_id" readonly="1"/>
+                    <field name="sale_line_id" readonly="1"/>
+                    <field name="location_id" readonly="1"/>
+                    <field name="vehicle_id" options="{'no_create': True}"/>
+                    <field name="driver_id" options="{'no_create': True}"/>
+                    <field name="mix_description"/>
+                </group>
+                <footer>
+                    <button string="Create Ticket" name="action_create_ticket" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

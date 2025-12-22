@@ -18,6 +18,7 @@ Simplified interface for concrete delivery operations:
     'license': 'LGPL-3',
     'depends': ['concrete_order', 'concrete_order_stock_out'],
     'data': [
+        'wizard/concrete_delivery_wizard_views.xml',
         'views/concrete_delivery_cmdp_views.xml',
         'views/menu_views.xml',
         'security/ir.model.access.csv',
