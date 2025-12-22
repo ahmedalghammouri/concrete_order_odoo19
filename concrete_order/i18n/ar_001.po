@@ -16,68 +16,68 @@ msgstr ""
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "<i class="fa fa-building text-info" title="Customer"/>"
-msgstr "<i class="fa fa-building text-info" title="العميل"/>"
+msgid "<i class=\"fa fa-building text-info\" title=\"Customer\"/>"
+msgstr "<i class=\"fa fa-building text-info\" title=\"العميل\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_kanban
-msgid "<i class="fa fa-calendar text-muted"/> License:"
-msgstr "<i class="fa fa-calendar text-muted"/> الرخصة:"
+msgid "<i class=\"fa fa-calendar text-muted\"/> License:"
+msgstr "<i class=\"fa fa-calendar text-muted\"/> الرخصة:"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "<i class="fa fa-calendar" title="Date"/>"
-msgstr "<i class="fa fa-calendar" title="التاريخ"/>"
+msgid "<i class=\"fa fa-calendar\" title=\"Date\"/>"
+msgstr "<i class=\"fa fa-calendar\" title=\"التاريخ\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
-msgid "<i class="fa fa-check-circle text-primary"/> Has Pump"
-msgstr "<i class="fa fa-check-circle text-primary"/> لديه مضخة"
+msgid "<i class=\"fa fa-check-circle text-primary\"/> Has Pump"
+msgstr "<i class=\"fa fa-check-circle text-primary\"/> لديه مضخة"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "<i class="fa fa-cube text-success" title="Product"/>"
-msgstr "<i class="fa fa-cube text-success" title="المنتج"/>"
+msgid "<i class=\"fa fa-cube text-success\" title=\"Product\"/>"
+msgstr "<i class=\"fa fa-cube text-success\" title=\"المنتج\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "<i class="fa fa-map-marker text-danger" title="Site"/>"
-msgstr "<i class="fa fa-map-marker text-danger" title="الموقع"/>"
+msgid "<i class=\"fa fa-map-marker text-danger\" title=\"Site\"/>"
+msgstr "<i class=\"fa fa-map-marker text-danger\" title=\"الموقع\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_kanban
-msgid "<i class="fa fa-phone" title="Phone"/>"
-msgstr "<i class="fa fa-phone" title="الهاتف"/>"
+msgid "<i class=\"fa fa-phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" title=\"الهاتف\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
-msgid "<i class="fa fa-tachometer text-success" title="Capacity"/>"
-msgstr "<i class="fa fa-tachometer text-success" title="السعة"/>"
+msgid "<i class=\"fa fa-tachometer text-success\" title=\"Capacity\"/>"
+msgstr "<i class=\"fa fa-tachometer text-success\" title=\"السعة\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_kanban
-msgid "<i class="fa fa-truck text-info" title="Vehicle"/>"
-msgstr "<i class="fa fa-truck text-info" title="المركبة"/>"
+msgid "<i class=\"fa fa-truck text-info\" title=\"Vehicle\"/>"
+msgstr "<i class=\"fa fa-truck text-info\" title=\"المركبة\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "<i class="fa fa-truck" title="Vehicle"/>"
-msgstr "<i class="fa fa-truck" title="المركبة"/>"
+msgid "<i class=\"fa fa-truck\" title=\"Vehicle\"/>"
+msgstr "<i class=\"fa fa-truck\" title=\"المركبة\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
-msgid "<i class="fa fa-user text-info" title="Driver"/>"
-msgstr "<i class="fa fa-user text-info" title="السائق"/>"
+msgid "<i class=\"fa fa-user text-info\" title=\"Driver\"/>"
+msgstr "<i class=\"fa fa-user text-info\" title=\"السائق\"/>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "<small class="text-muted">Volume</small>"
-msgstr "<small class="text-muted">الحجم</small>"
+msgid "<small class=\"text-muted\">Volume</small>"
+msgstr "<small class=\"text-muted\">الحجم</small>"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
-msgid "<span class="o_stat_text">Document</span>"
-msgstr "<span class="o_stat_text">مستند</span>"
+msgid "<span class=\"o_stat_text\">Document</span>"
+msgstr "<span class=\"o_stat_text\">مستند</span>"
 
 #. module: concrete_order
 #: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_needaction
@@ -494,14 +494,14 @@ msgstr "اسم العرض"
 #. module: concrete_order
 #. odoo-python
 #: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
-msgid "Document "%s" created successfully."
-msgstr "تم إنشاء المستند "%s" بنجاح."
+msgid "Document \"%s\" created successfully."
+msgstr "تم إنشاء المستند \"%s\" بنجاح."
 
 #. module: concrete_order
 #. odoo-python
 #: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
-msgid "Document "%s" updated successfully."
-msgstr "تم تحديث المستند "%s" بنجاح."
+msgid "Document \"%s\" updated successfully."
+msgstr "تم تحديث المستند \"%s\" بنجاح."
 
 #. module: concrete_order
 #: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__done
@@ -1476,5 +1476,5 @@ msgstr "معرف المركبة"
 
 #. module: concrete_order
 #: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
-msgid "| <i class="fa fa-user" title="Driver"/>"
-msgstr "| <i class="fa fa-user" title="السائق"/>"
+msgid "| <i class=\"fa fa-user\" title=\"Driver\"/>"
+msgstr "| <i class=\"fa fa-user\" title=\"السائق\"/>"

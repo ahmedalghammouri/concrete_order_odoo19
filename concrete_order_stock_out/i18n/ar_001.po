@@ -16,69 +16,69 @@ msgstr ""
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.stock_picking_form_inherit_concrete_ticket
-msgid "<span class="o_stat_text" style="font-size: 11px;">Total Volume</span>"
-msgstr "<span class="o_stat_text" style="font-size: 11px;">إجمالي الحجم</span>"
+msgid "<span class=\"o_stat_text\" style=\"font-size: 11px;\">Total Volume</span>"
+msgstr "<span class=\"o_stat_text\" style=\"font-size: 11px;\">إجمالي الحجم</span>"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
-msgid "<span class="o_stat_text">Delivery</span>"
-msgstr "<span class="o_stat_text">التوصيل</span>"
+msgid "<span class=\"o_stat_text\">Delivery</span>"
+msgstr "<span class=\"o_stat_text\">التوصيل</span>"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.stock_picking_form_inherit_concrete_ticket
-msgid "<span class="o_stat_text">Tickets</span>"
-msgstr "<span class="o_stat_text">التذاكر</span>"
+msgid "<span class=\"o_stat_text\">Tickets</span>"
+msgstr "<span class=\"o_stat_text\">التذاكر</span>"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
 msgid ""
-"<span style="font-size: 13px; color: #6c757d; margin-left: 5px;">M³</span>"
+"<span style=\"font-size: 13px; color: #6c757d; margin-left: 5px;\">M³</span>"
 msgstr ""
-"<span style="font-size: 13px; color: #6c757d; margin-left: 5px;">م³</span>"
+"<span style=\"font-size: 13px; color: #6c757d; margin-left: 5px;\">م³</span>"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
 msgid ""
-"<strong>Fulfillment %:</strong> <span style="color: #5cb85c;">Green</span>"
-" if ≥95%, <span style="color: #f0ad4e;">Orange</span> if 90-95%, <span "
-"style="color: #d9534f;">Red</span> if <90%"
+"<strong>Fulfillment %:</strong> <span style=\"color: #5cb85c;\">Green</span>"
+" if ≥95%, <span style=\"color: #f0ad4e;\">Orange</span> if 90-95%, <span "
+"style=\"color: #d9534f;\">Red</span> if <90%"
 msgstr ""
-"<strong>نسبة الإنجاز %:</strong> <span style="color: #5cb85c;">أخضر</span>"
-" إذا كان ≥95%، <span style="color: #f0ad4e;">برتقالي</span> إذا كان 90-95%، <span "
-"style="color: #d9534f;">أحمر</span> إذا كان <90%"
+"<strong>نسبة الإنجاز %:</strong> <span style=\"color: #5cb85c;\">أخضر</span>"
+" إذا كان ≥95%، <span style=\"color: #f0ad4e;\">برتقالي</span> إذا كان 90-95%، <span "
+"style=\"color: #d9534f;\">أحمر</span> إذا كان <90%"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
 msgid ""
-"<strong>Remaining Qty:</strong> <span style="color: #d9534f;">Red</span> "
-"if positive (under-delivery), <span style="color: #5cb85c;">Green</span> "
+"<strong>Remaining Qty:</strong> <span style=\"color: #d9534f;\">Red</span> "
+"if positive (under-delivery), <span style=\"color: #5cb85c;\">Green</span> "
 "if zero/negative (fulfilled/over-delivered)"
 msgstr ""
-"<strong>الكمية المتبقية:</strong> <span style="color: #d9534f;">أحمر</span> "
-"إذا كانت موجبة (نقص توصيل)، <span style="color: #5cb85c;">أخضر</span> "
+"<strong>الكمية المتبقية:</strong> <span style=\"color: #d9534f;\">أحمر</span> "
+"إذا كانت موجبة (نقص توصيل)، <span style=\"color: #5cb85c;\">أخضر</span> "
 "إذا كانت صفر أو سالبة (تم الإنجاز/زيادة توصيل)"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
 msgid ""
-"<strong>Variance %:</strong> <span style="color: #5cb85c;">Green</span> if"
-" within ±5%, <span style="color: #f0ad4e;">Orange</span> if outside that "
+"<strong>Variance %:</strong> <span style=\"color: #5cb85c;\">Green</span> if"
+" within ±5%, <span style=\"color: #f0ad4e;\">Orange</span> if outside that "
 "range"
 msgstr ""
-"<strong>نسبة التفاوت %:</strong> <span style="color: #5cb85c;">أخضر</span> إذا"
-" كانت ضمن ±5%، <span style="color: #f0ad4e;">برتقالي</span> إذا كانت خارج هذا "
+"<strong>نسبة التفاوت %:</strong> <span style=\"color: #5cb85c;\">أخضر</span> إذا"
+" كانت ضمن ±5%، <span style=\"color: #f0ad4e;\">برتقالي</span> إذا كانت خارج هذا "
 "النطاق"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
 msgid ""
-"<strong>Variance:</strong> <span style="color: #5cb85c;">Green</span> if "
-"positive/zero (met or exceeded), <span style="color: "
-"#f0ad4e;">Orange</span> if negative (short)"
+"<strong>Variance:</strong> <span style=\"color: #5cb85c;\">Green</span> if "
+"positive/zero (met or exceeded), <span style=\"color: "
+"#f0ad4e;\">Orange</span> if negative (short)"
 msgstr ""
-"<strong>التفاوت:</strong> <span style="color: #5cb85c;">أخضر</span> إذا "
-"كان موجب/صفر (تمت المطابقة أو التجاوز)، <span style="color: "
-"#f0ad4e;">برتقالي</span> إذا كان سالباً (عجز)"
+"<strong>التفاوت:</strong> <span style=\"color: #5cb85c;\">أخضر</span> إذا "
+"كان موجب/صفر (تمت المطابقة أو التجاوز)، <span style=\"color: "
+"#f0ad4e;\">برتقالي</span> إذا كان سالباً (عجز)"
 
 #. module: concrete_order_stock_out
 #: model_terms:ir.ui.view,arch_db:concrete_order_stock_out.concrete_delivery_ticket_view_form_stock_out
@@ -232,7 +232,7 @@ msgstr "عدد التذاكر"
 #. odoo-python
 #: code:addons/concrete_order_stock_out/models/concrete_delivery_ticket.py:0
 msgid "Ticket must be in Delivered or Done state."
-msgstr "يجب أن تكون التذكرة في حالة "تم التوصيل" أو "تم بنجاح"."
+msgstr "يجب أن تكون التذكرة في حالة \"تم التوصيل\" أو \"تم بنجاح\"."
 
 #. module: concrete_order_stock_out
 #: model:ir.model.fields,field_description:concrete_order_stock_out.field_stock_picking__total_volume_delivered

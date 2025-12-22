@@ -16,18 +16,18 @@ msgstr ""
 
 #. module: concrete_order_sale
 #: model_terms:ir.ui.view,arch_db:concrete_order_sale.sale_order_form_inherit_concrete_ticket
-msgid "<span class="o_stat_text" style="font-size: 11px;">Total Volume</span>"
-msgstr "<span class="o_stat_text" style="font-size: 11px;">إجمالي الحجم</span>"
+msgid "<span class=\"o_stat_text\" style=\"font-size: 11px;\">Total Volume</span>"
+msgstr "<span class=\"o_stat_text\" style=\"font-size: 11px;\">إجمالي الحجم</span>"
 
 #. module: concrete_order_sale
 #: model_terms:ir.ui.view,arch_db:concrete_order_sale.concrete_delivery_ticket_view_form_sale
-msgid "<span class="o_stat_text">Sale Order</span>"
-msgstr "<span class="o_stat_text">أمر البيع</span>"
+msgid "<span class=\"o_stat_text\">Sale Order</span>"
+msgstr "<span class=\"o_stat_text\">أمر البيع</span>"
 
 #. module: concrete_order_sale
 #: model_terms:ir.ui.view,arch_db:concrete_order_sale.sale_order_form_inherit_concrete_ticket
-msgid "<span class="o_stat_text">Tickets</span>"
-msgstr "<span class="o_stat_text">التذاكر</span>"
+msgid "<span class=\"o_stat_text\">Tickets</span>"
+msgstr "<span class=\"o_stat_text\">التذاكر</span>"
 
 #. module: concrete_order_sale
 #: model:ir.model,name:concrete_order_sale.model_concrete_delivery_ticket
