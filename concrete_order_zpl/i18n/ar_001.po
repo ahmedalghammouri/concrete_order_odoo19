@@ -1,0 +1,600 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * concrete_order_zpl
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-22 01:32+0000\n"
+"PO-Revision-Date: 2025-12-22 01:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__darkness
+msgid "0-30, higher = darker"
+msgstr "0-30، القيمة الأعلى تعني طباعة أكثر قتامة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__dpi__203
+msgid "203 DPI"
+msgstr "203 نقطة لكل بوصة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__dpi__300
+msgid "300 DPI"
+msgstr "300 نقطة لكل بوصة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__dpi__600
+msgid "600 DPI"
+msgstr "600 نقطة لكل بوصة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب اتخاذ إجراء"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تنسيق استثناء النشاط"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "Auto-print"
+msgstr "طباعة تلقائية"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__auto_print_ticket
+msgid "Auto-print Ticket"
+msgstr "طباعة التذكرة تلقائياً"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__print_type__barcode
+msgid "Barcode"
+msgstr "باركود"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/concrete_delivery_ticket.py:0
+msgid "Barcode printed successfully!"
+msgstr "تمت طباعة الباركود بنجاح!"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: concrete_order_zpl
+#: model:ir.model,name:concrete_order_zpl.model_concrete_delivery_ticket
+msgid "Concrete Delivery Ticket"
+msgstr "تذكرة توصيل خرسانة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__connection_status__connected
+msgid "Connected"
+msgstr "متصل"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "Connection Failed"
+msgstr "فشل الاتصال"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__connection_type
+msgid "Connection Type"
+msgstr "نوع الاتصال"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__create_uid
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__create_date
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__print_type__custom
+msgid "Custom"
+msgstr "مخصص"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__darkness
+msgid "Darkness"
+msgstr "القتامة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__is_default
+msgid "Default Printer"
+msgstr "الطابعة الافتراضية"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__ticket_id
+msgid "Delivery Ticket"
+msgstr "تذكرة التوصيل"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "Disabled"
+msgstr "معطل"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__connection_status__disconnected
+msgid "Disconnected"
+msgstr "غير متصل"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_delivery_ticket__display_name
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__display_name
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__state__done
+msgid "Done"
+msgstr "تم بنجاح"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__is_enabled
+msgid "Enabled"
+msgstr "مفعل"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__connection_status__error
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "Error"
+msgstr "خطأ"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__error_message
+msgid "Error Message"
+msgstr "رسالة الخطأ"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__state__failed
+msgid "Failed"
+msgstr "فشل"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__print_speed__6
+msgid "Fast (6 ips)"
+msgstr "سريع (6 بوصة/ثانية)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__has_message
+msgid "Has Message"
+msgstr "يحتوي رسالة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_delivery_ticket__id
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__id
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__ip_address
+msgid "IP Address"
+msgstr "عنوان IP"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "IP Address and Port are required for network printers."
+msgstr "عنوان IP والمنفذ مطلوبان لطابعات الشبكة."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فهناك رسائل جديدة تتطلب اهتمامك."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__message_has_error
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فهناك رسائل بها خطأ في التوصيل."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__name
+msgid "Job Name"
+msgstr "اسم المهمة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__print_type__label
+msgid "Label"
+msgstr "ملصق"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__label_height
+msgid "Label Height (mm)"
+msgstr "ارتفاع الملصق (ملم)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__label_width
+msgid "Label Width (mm)"
+msgstr "عرض الملصق (ملم)"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/concrete_delivery_ticket.py:0
+msgid "Label printed successfully!"
+msgstr "تمت طباعة الملصق بنجاح!"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__last_check_date
+msgid "Last Check"
+msgstr "آخر فحص"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__error_message
+msgid "Last Error"
+msgstr "آخر خطأ"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__write_uid
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__write_date
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__print_speed__4
+msgid "Medium (4 ips)"
+msgstr "متوسط (4 بوصة/ثانية)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في توصيل الرسالة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__connection_type__network
+msgid "Network (IP)"
+msgstr "شبكة (IP)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط القادم"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__notes
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التوصيل"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__state__pending
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/concrete_delivery_ticket.py:0
+msgid "Please select a printer first."
+msgstr "يرجى اختيار طابعة أولاً."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__port
+msgid "Port"
+msgstr "المنفذ"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_delivery_ticket_zpl_form
+msgid "Print Barcode"
+msgstr "طباعة باركود"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__print_date
+msgid "Print Date"
+msgstr "تاريخ الطباعة"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_delivery_ticket_zpl_form
+msgid "Print Label"
+msgstr "طباعة ملصق"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__print_speed
+msgid "Print Speed"
+msgstr "سرعة الطباعة"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_delivery_ticket_zpl_form
+msgid "Print Ticket"
+msgstr "طباعة التذكرة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__print_type
+msgid "Print Type"
+msgstr "نوع الطباعة"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "Print failed: %s"
+msgstr "فشلت الطباعة: %s"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_delivery_ticket__printer_id
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__printer_id
+msgid "Printer"
+msgstr "الطابعة"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "Printer '%s' is disabled."
+msgstr "الطابعة '%s' معطلة."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__name
+msgid "Printer Name"
+msgstr "اسم الطابعة"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "Printer Settings"
+msgstr "إعدادات الطابعة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__state__printing
+msgid "Printing"
+msgstr "جاري الطباعة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__dpi
+msgid "Resolution"
+msgstr "الدقة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في توصيل رسالة SMS"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__print_speed__2
+msgid "Slow (2 ips)"
+msgstr "بطيء (2 بوصة/ثانية)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__state
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__connection_status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق مر بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/concrete_delivery_ticket.py:0
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "Success"
+msgstr "نجاح"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "Test Connection"
+msgstr "اختبار الاتصال"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "Test print sent successfully!"
+msgstr "تم إرسال طباعة الاختبار بنجاح!"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_print_job__print_type__ticket
+msgid "Ticket"
+msgstr "تذكرة"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/concrete_delivery_ticket.py:0
+msgid "Ticket printed successfully!"
+msgstr "تمت طباعة التذكرة بنجاح!"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__print_count
+msgid "Total Prints"
+msgstr "إجمالي المطبوعات"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__usb_device
+msgid "USB Device Path"
+msgstr "مسار جهاز USB"
+
+#. module: concrete_order_zpl
+#. odoo-python
+#: code:addons/concrete_order_zpl/models/zpl_printer.py:0
+msgid "USB Device Path is required for USB printers."
+msgstr "مسار جهاز USB مطلوب للطابعات المتصلة عبر USB."
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__connection_type__usb
+msgid "USB/Serial"
+msgstr "USB/تسلسلي"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields.selection,name:concrete_order_zpl.selection__concrete_zpl_printer__print_speed__8
+msgid "Very Fast (8 ips)"
+msgstr "سريع جداً (8 بوصة/ثانية)"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_printer__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ تواصل الموقع الإلكتروني"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,field_description:concrete_order_zpl.field_concrete_zpl_print_job__zpl_code
+msgid "ZPL Code"
+msgstr "كود ZPL"
+
+#. module: concrete_order_zpl
+#: model:ir.model,name:concrete_order_zpl.model_concrete_zpl_print_job
+msgid "ZPL Print Job"
+msgstr "مهمة طباعة ZPL"
+
+#. module: concrete_order_zpl
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_form
+msgid "ZPL Printer"
+msgstr "طابعة ZPL"
+
+#. module: concrete_order_zpl
+#: model:ir.actions.act_window,name:concrete_order_zpl.action_concrete_zpl_printer
+#: model:ir.ui.menu,name:concrete_order_zpl.menu_concrete_zpl_printer
+#: model_terms:ir.ui.view,arch_db:concrete_order_zpl.view_concrete_zpl_printer_tree
+msgid "ZPL Printers"
+msgstr "طابعات ZPL"
+
+#. module: concrete_order_zpl
+#: model:ir.model,name:concrete_order_zpl.model_concrete_zpl_printer
+msgid "ZPL Thermal Printer for Concrete"
+msgstr "طابعة ZPL حرارية للخرسانة"
+
+#. module: concrete_order_zpl
+#: model:ir.model.fields,help:concrete_order_zpl.field_concrete_zpl_printer__usb_device
+msgid "e.g., /dev/usb/lp0 or COM1"
+msgstr "مثال: /dev/usb/lp0 أو COM1"

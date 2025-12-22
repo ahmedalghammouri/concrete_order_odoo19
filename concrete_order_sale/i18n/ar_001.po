@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * concrete_order_sale
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-22 01:21+0000\n"
+"PO-Revision-Date: 2025-12-22 01:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: concrete_order_sale
+#: model_terms:ir.ui.view,arch_db:concrete_order_sale.sale_order_form_inherit_concrete_ticket
+msgid "<span class="o_stat_text" style="font-size: 11px;">Total Volume</span>"
+msgstr "<span class="o_stat_text" style="font-size: 11px;">إجمالي الحجم</span>"
+
+#. module: concrete_order_sale
+#: model_terms:ir.ui.view,arch_db:concrete_order_sale.concrete_delivery_ticket_view_form_sale
+msgid "<span class="o_stat_text">Sale Order</span>"
+msgstr "<span class="o_stat_text">أمر البيع</span>"
+
+#. module: concrete_order_sale
+#: model_terms:ir.ui.view,arch_db:concrete_order_sale.sale_order_form_inherit_concrete_ticket
+msgid "<span class="o_stat_text">Tickets</span>"
+msgstr "<span class="o_stat_text">التذاكر</span>"
+
+#. module: concrete_order_sale
+#: model:ir.model,name:concrete_order_sale.model_concrete_delivery_ticket
+msgid "Concrete Delivery Ticket"
+msgstr "تذكرة توصيل خرسانة"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order_line__ticket_ids
+msgid "Delivery Tickets"
+msgstr "تذاكر التوصيل"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_concrete_delivery_ticket__display_name
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order__display_name
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_concrete_delivery_ticket__id
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order__id
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_concrete_delivery_ticket__sale_order_id
+#: model_terms:ir.ui.view,arch_db:concrete_order_sale.concrete_delivery_ticket_view_form_sale
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_concrete_delivery_ticket__sale_line_id
+msgid "Sale Order Line"
+msgstr "بند أمر البيع"
+
+#. module: concrete_order_sale
+#: model:ir.model,name:concrete_order_sale.model_sale_order
+msgid "Sales Order"
+msgstr "أمر المبيعات"
+
+#. module: concrete_order_sale
+#: model:ir.model,name:concrete_order_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order__ticket_count
+msgid "Ticket Count"
+msgstr "عدد التذاكر"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order_line__total_delivered_volume
+msgid "Total Delivered (M³)"
+msgstr "إجمالي الكمية المسلمة (م³)"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order__total_volume_delivered
+msgid "Total Volume Delivered"
+msgstr "إجمالي الحجم المسلم"
+
+#. module: concrete_order_sale
+#: model:ir.model.fields,field_description:concrete_order_sale.field_sale_order__total_volume_display
+msgid "Volume Display"
+msgstr "عرض الحجم"
+
+#. module: concrete_order_sale
+#: model_terms:ir.ui.view,arch_db:concrete_order_sale.concrete_delivery_ticket_view_search_sale
+msgid "With Sale Order"
+msgstr "مع أمر بيع"

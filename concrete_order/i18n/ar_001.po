@@ -1,0 +1,1480 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#  * concrete_order
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-22 01:01+0000\n"
+"PO-Revision-Date: 2025-12-22 01:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "<i class="fa fa-building text-info" title="Customer"/>"
+msgstr "<i class="fa fa-building text-info" title="العميل"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_kanban
+msgid "<i class="fa fa-calendar text-muted"/> License:"
+msgstr "<i class="fa fa-calendar text-muted"/> الرخصة:"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "<i class="fa fa-calendar" title="Date"/>"
+msgstr "<i class="fa fa-calendar" title="التاريخ"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
+msgid "<i class="fa fa-check-circle text-primary"/> Has Pump"
+msgstr "<i class="fa fa-check-circle text-primary"/> لديه مضخة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "<i class="fa fa-cube text-success" title="Product"/>"
+msgstr "<i class="fa fa-cube text-success" title="المنتج"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "<i class="fa fa-map-marker text-danger" title="Site"/>"
+msgstr "<i class="fa fa-map-marker text-danger" title="الموقع"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_kanban
+msgid "<i class="fa fa-phone" title="Phone"/>"
+msgstr "<i class="fa fa-phone" title="الهاتف"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
+msgid "<i class="fa fa-tachometer text-success" title="Capacity"/>"
+msgstr "<i class="fa fa-tachometer text-success" title="السعة"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_kanban
+msgid "<i class="fa fa-truck text-info" title="Vehicle"/>"
+msgstr "<i class="fa fa-truck text-info" title="المركبة"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "<i class="fa fa-truck" title="Vehicle"/>"
+msgstr "<i class="fa fa-truck" title="المركبة"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
+msgid "<i class="fa fa-user text-info" title="Driver"/>"
+msgstr "<i class="fa fa-user text-info" title="السائق"/>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "<small class="text-muted">Volume</small>"
+msgstr "<small class="text-muted">الحجم</small>"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "<span class="o_stat_text">Document</span>"
+msgstr "<span class="o_stat_text">مستند</span>"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_needaction
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_needaction
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_needaction
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_needaction
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب اتخاذ إجراء"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__state__active
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_vehicle__state__active
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_exception_decoration
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_exception_decoration
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_exception_decoration
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_exception_decoration
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تنسيق استثناء النشاط"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_state
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_state
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_state
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_state
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_type_icon
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_type_icon
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_type_icon
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_type_icon
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_concrete_driver
+msgid "Add your first driver"
+msgstr "أضف سائقك الأول"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_concrete_vehicle
+msgid "Add your first vehicle"
+msgstr "أضف مركبتك الأولى"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Additional notes..."
+msgstr "ملاحظات إضافية..."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__admixture
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__admixture
+msgid "Admixture"
+msgstr "المضافات"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Are you sure you want to cancel this ticket?"
+msgstr "هل أنت متأكد أنك تريد إلغاء هذه التذكرة؟"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__area
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__area
+msgid "Area"
+msgstr "المنطقة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__vehicle_id
+msgid "Assigned Vehicle"
+msgstr "المركبة المسندة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_attachment_count
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_attachment_count
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_attachment_count
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_attachment_count
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__driver_performance__bad
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__performance_rating__bad
+msgid "Bad"
+msgstr "سيء"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__batch_size
+msgid "Batch Size (m³)"
+msgstr "حجم الخلطة (متر مكعب)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__quantity_delivered
+msgid "Batched Quantities (KGs)"
+msgstr "الكميات المخلطة (كجم)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__name
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__brand_id
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#. module: concrete_order
+#: model:res.groups,comment:concrete_order.group_concrete_user
+msgid "Can create and manage delivery tickets"
+msgstr "يمكنه إنشاء وإدارة تذاكر التوصيل"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__capacity_m3
+msgid "Capacity (M³)"
+msgstr "السعة (م³)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__cell_location
+msgid "Cell Location (e.g., A1)"
+msgstr "موقع الخلية (مثل A1)"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__cement_type
+msgid "Cement Type"
+msgstr "نوع الإسمنت"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__cement_type
+msgid "Cement Type/Category"
+msgstr "نوع/فئة الإسمنت"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__vin_sn
+msgid "Chassis Number"
+msgstr "رقم الشاسيه"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__company_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__company_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_concrete_delivery_ticket
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Concrete Delivery Ticket"
+msgstr "تذكرة توصيل خرسانة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Concrete Delivery Tickets"
+msgstr "تذاكر توصيل الخرسانة"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_vehicle_model__vehicle_type__mixer
+msgid "Concrete Mixer"
+msgstr "خلاطة خرسانة"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_concrete_driver
+msgid "Concrete Mixer Driver"
+msgstr "سائق خلاطة خرسانة"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_concrete_vehicle
+msgid "Concrete Mixer Vehicle"
+msgstr "مركبة خلاطة خرسانة"
+
+#. module: concrete_order
+#: model:ir.module.category,name:concrete_order.module_category_concrete_order
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_order_root
+msgid "Concrete Order"
+msgstr "طلب خرسانة"
+
+#. module: concrete_order
+#: model:res.groups,name:concrete_order.group_concrete_manager
+msgid "Concrete Order / Manager"
+msgstr "طلب خرسانة / مدير"
+
+#. module: concrete_order
+#: model:res.groups,name:concrete_order.group_concrete_user
+msgid "Concrete Order / User"
+msgstr "طلب خرسانة / مستخدم"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__product_id
+msgid "Concrete Product"
+msgstr "منتج خرساني"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_vehicle_model__vehicle_type__pump
+msgid "Concrete Pump"
+msgstr "مضخة خرسانة"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_concrete_vehicle_brand
+msgid "Concrete Vehicle Brand"
+msgstr "العلامة التجارية للمركبة الخرسانية"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_concrete_vehicle_model
+msgid "Concrete Vehicle Model"
+msgstr "موديل المركبة الخرسانية"
+
+#. module: concrete_order
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_configuration
+msgid "Configuration"
+msgstr "التهيئة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__confirmed
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_excel_template
+msgid "Create your first Excel template"
+msgstr "أنشئ قالب إكسيل الأول الخاص بك"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_concrete_delivery_ticket
+msgid "Create your first delivery ticket"
+msgstr "أنشئ تذكرة التوصيل الأولى الخاصة بك"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_excel_field_mapping
+msgid "Create your first field mapping"
+msgstr "أنشئ أول تعيين للحقول الخاص بك"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__create_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__create_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__create_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__create_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__create_uid
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__create_uid
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__create_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__create_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__create_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__create_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__create_date
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__create_date
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__driver_id
+msgid "Current Driver"
+msgstr "السائق الحالي"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__customer_id
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__customer_id
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__customer_email
+msgid "Customer Email"
+msgstr "بريد العميل الإلكتروني"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__customer_order_no
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__customer_order_no
+msgid "Customer Order No."
+msgstr "رقم طلب العميل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__customer_phone
+msgid "Customer Phone"
+msgstr "هاتف العميل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__signature_customer
+msgid "Customer Signature"
+msgstr "توقيع العميل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__customer_signature_date
+msgid "Customer Signature Date"
+msgstr "تاريخ توقيع العميل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__delivery_date
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__delivery_date
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_search
+msgid "Default"
+msgstr "الافتراضي"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__capacity_m3
+msgid "Default Capacity (M³)"
+msgstr "السعة الافتراضية (م³)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__is_default
+msgid "Default Template"
+msgstr "القالب الافتراضي"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__is_delayed
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Delayed"
+msgstr "متأخر"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__delivered
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__delivery_to
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__delivery_to
+msgid "Delivered To"
+msgstr "سلمت لـ"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Delivery"
+msgstr "التوصيل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__delivery_address
+msgid "Delivery Address"
+msgstr "عنوان التوصيل"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_graph
+msgid "Delivery Analysis"
+msgstr "تحليل التوصيل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__delivery_note
+msgid "Delivery Note/Warning"
+msgstr "ملاحظة التوصيل/تحذير"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_pivot
+msgid "Delivery Pivot"
+msgstr "بيانات التوصيل المحورية"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_driver.py:0
+#: code:addons/concrete_order/models/concrete_vehicle.py:0
+#: model:ir.actions.act_window,name:concrete_order.action_concrete_delivery_ticket
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_delivery_ticket
+msgid "Delivery Tickets"
+msgstr "تذاكر التوصيل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__discharge_duration
+msgid "Discharge Duration (Hours)"
+msgstr "مدة التفريغ (ساعات)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__display_name
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__display_name
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__display_name
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__display_name
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__display_name
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__display_name
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "Document "%s" created successfully."
+msgstr "تم إنشاء المستند "%s" بنجاح."
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "Document "%s" updated successfully."
+msgstr "تم تحديث المستند "%s" بنجاح."
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__done
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Done"
+msgstr "تم بنجاح"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__draft
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__driver_id
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "Driver"
+msgstr "السائق"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__driver_name
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__name
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__driver_name
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_form
+msgid "Driver Name"
+msgstr "اسم السائق"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__driver_phone
+msgid "Driver Phone"
+msgstr "هاتف السائق"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__driver_performance
+msgid "Driver's Performance"
+msgstr "أداء السائق"
+
+#. module: concrete_order
+#: model:ir.actions.act_window,name:concrete_order.action_concrete_driver
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_driver
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+msgid "Drivers"
+msgstr "السائقون"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__enquiry_form_no
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__enquiry_form_no
+msgid "Enquiry Form No."
+msgstr "رقم نموذج الاستفسار"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "Error processing template: %s"
+msgstr "خطأ أثناء معالجة القالب: %s"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_excel_field_mapping
+msgid "Excel Field Mapping"
+msgstr "تعيين حقول الإكسيل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__document_id
+msgid "Excel File"
+msgstr "ملف إكسيل"
+
+#. module: concrete_order
+#: model:ir.model,name:concrete_order.model_excel_template
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__template_id
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_form
+msgid "Excel Template"
+msgstr "قالب إكسيل"
+
+#. module: concrete_order
+#: model:ir.actions.act_window,name:concrete_order.action_excel_template
+#: model:ir.ui.menu,name:concrete_order.menu_excel_template
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_search
+msgid "Excel Templates"
+msgstr "قوالب إكسيل"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__driver_performance__excellent
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__performance_rating__excellent
+msgid "Excellent"
+msgstr "ممتاز"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+msgid "Excellent Performance"
+msgstr "أداء ممتاز"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__driver_performance__fair
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__performance_rating__fair
+msgid "Fair"
+msgstr "مقبول"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__field_name
+msgid "Field"
+msgstr "الحقل"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_field_mapping_form
+msgid "Field Mapping"
+msgstr "تعيين الحقول"
+
+#. module: concrete_order
+#: model:ir.actions.act_window,name:concrete_order.action_excel_field_mapping
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__mapping_ids
+#: model:ir.ui.menu,name:concrete_order.menu_excel_field_mapping
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_field_mapping_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_form
+msgid "Field Mappings"
+msgstr "تعيينات الحقول"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__file
+msgid "File Content"
+msgstr "محتوى الملف"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__filename
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: concrete_order
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_fleet
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_fleet_config
+msgid "Fleet"
+msgstr "الأسطول"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_follower_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_follower_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_follower_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_follower_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_partner_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_partner_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_partner_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_partner_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__activity_type_icon
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__activity_type_icon
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__activity_type_icon
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__activity_type_icon
+#: model:ir.model.fields,help:concrete_order.field_excel_template__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: concrete_order
+#: model:res.groups,comment:concrete_order.group_concrete_manager
+msgid "Full access to concrete order configuration and records"
+msgstr "وصول كامل لتهيئة طلبات الخرسانة والسجلات"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Generate Excel"
+msgstr "إنشاء ملف إكسيل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__generated_document_id
+msgid "Generated Document"
+msgstr "المستند المنشأ"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__driver_performance__good
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__performance_rating__good
+msgid "Good"
+msgstr "جيد"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__has_message
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__has_message
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__has_message
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__has_message
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__has_message
+msgid "Has Message"
+msgstr "يحتوي رسالة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__has_pump
+msgid "Has Pump"
+msgstr "يحتوي مضخة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "High Volume (>10M³)"
+msgstr "حجم مرتفع (>10 م³)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__id
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__id
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_exception_icon
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_exception_icon
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_exception_icon
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_exception_icon
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__activity_exception_icon
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__activity_exception_icon
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__activity_exception_icon
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__activity_exception_icon
+#: model:ir.model.fields,help:concrete_order.field_excel_template__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__message_needaction
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__message_needaction
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__message_needaction
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__message_needaction
+#: model:ir.model.fields,help:concrete_order.field_excel_template__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فهناك رسائل جديدة تتطلب اهتمامك."
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__message_has_error
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__message_has_sms_error
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__message_has_error
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__message_has_sms_error
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__message_has_error
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__message_has_sms_error
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__message_has_error
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__message_has_sms_error
+#: model:ir.model.fields,help:concrete_order.field_excel_template__message_has_error
+#: model:ir.model.fields,help:concrete_order.field_excel_template__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فهناك رسائل بها خطأ في التوصيل."
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_delivery_ticket__state__in_transit
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "In Transit"
+msgstr "في الطريق"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__state__inactive
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_vehicle__state__inactive
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_is_follower
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_is_follower
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_is_follower
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_is_follower
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__write_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__write_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__write_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__write_uid
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__write_uid
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__write_uid
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__write_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__write_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__write_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_brand__write_date
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__write_date
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__write_date
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__license_expiry
+msgid "License Expiry"
+msgstr "انتهاء الرخصة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__license_number
+msgid "License Number"
+msgstr "رقم الرخصة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__vehicle_plate
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__license_plate
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_form
+msgid "License Plate"
+msgstr "لوحة المركبة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Low Volume (<5M³)"
+msgstr "حجم منخفض (<5 م³)"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_vehicle__state__maintenance
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#. module: concrete_order
+#: model:ir.module.category,description:concrete_order.module_category_concrete_order
+msgid "Manage concrete delivery operations"
+msgstr "إدارة عمليات توصيل الخرسانة"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_concrete_driver
+msgid "Manage concrete mixer truck drivers."
+msgstr "إدارة سائقي شاحنات خلاطات الخرسانة."
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_concrete_vehicle
+msgid "Manage concrete mixer trucks and pumps."
+msgstr "إدارة شاحنات ومضخات خلاطات الخرسانة."
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_excel_field_mapping
+msgid "Map fields to Excel cells."
+msgstr "ربط الحقول بخلايا الإكسيل."
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_list
+msgid "Mappings"
+msgstr "التعيينات"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Mark Delivered"
+msgstr "تحديد كموصل"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__max_unloading_time
+msgid "Max Unloading Time (Hours)"
+msgstr "أقصى وقت للتفريغ (ساعات)"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Medium Volume (5-10M³)"
+msgstr "حجم متوسط (5-10 م³)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_has_error
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_has_error
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_has_error
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_has_error
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في توصيل الرسالة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Mix"
+msgstr "الخلطة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Mix & Plant"
+msgstr "الخلطة والمصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__mix_description
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__mix_description
+msgid "Mix Description"
+msgstr "وصف الخلطة"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_vehicle_model__vehicle_type__mixer_pump
+msgid "Mixer with Pump"
+msgstr "خلاطة مع مضخة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__model_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__name
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "Model"
+msgstr "الموديل"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Month"
+msgstr "الشهر"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__my_activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__my_activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__my_activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__my_activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_kanban
+msgid "M³"
+msgstr "م³"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_vehicle.py:0
+msgid "New Vehicle"
+msgstr "مركبة جديدة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_date_deadline
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_summary
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_summary
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_summary
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_summary
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_type_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_type_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_type_id
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_type_id
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط القادم"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "No document generated yet. Please generate Excel first."
+msgstr "لم يتم إنشاء مستند بعد. يرجى إنشاء ملف الإكسيل أولاً."
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_needaction_counter
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_needaction_counter
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_needaction_counter
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_needaction_counter
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_has_error_counter
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_has_error_counter
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_has_error_counter
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_has_error_counter
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__message_needaction_counter
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__message_needaction_counter
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__message_needaction_counter
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__message_needaction_counter
+#: model:ir.model.fields,help:concrete_order.field_excel_template__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__message_has_error_counter
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__message_has_error_counter
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__message_has_error_counter
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__message_has_error_counter
+#: model:ir.model.fields,help:concrete_order.field_excel_template__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التوصيل"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__concrete_driver__state__on_leave
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+msgid "On Leave"
+msgstr "في إجازة"
+
+#. module: concrete_order
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_operations
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+msgid "Performance"
+msgstr "الأداء"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__performance_rating
+msgid "Performance Rating"
+msgstr "تقييم الأداء"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Plant"
+msgstr "المصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__plant_batch_no
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__plant_batch_no
+msgid "Plant Batch No."
+msgstr "رقم خلطة المصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__plant_name
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__plant_name
+msgid "Plant Name"
+msgstr "اسم المصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__plant_no
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__plant_no
+msgid "Plant No."
+msgstr "رقم المصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__signature_plant
+msgid "Plant Signature"
+msgstr "توقيع المصنع"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "Please select an Excel template first."
+msgstr "يرجى اختيار قالب إكسيل أولاً."
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Print"
+msgstr "طباعة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__user_id
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__activity_user_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__activity_user_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__activity_user_id
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__activity_user_id
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "Return time cannot be before departure time."
+msgstr "لا يمكن أن يكون وقت العودة قبل وقت المغادرة."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__message_has_sms_error
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__message_has_sms_error
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__message_has_sms_error
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__message_has_sms_error
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في توصيل رسالة SMS"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__ticket_serial_no
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__ticket_serial_no
+msgid "Serial No."
+msgstr "الرقم التسلسلي"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Set to Draft"
+msgstr "تعيين كمسودة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Signatures"
+msgstr "التوقيعات"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Site"
+msgstr "الموقع"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Site Information"
+msgstr "معلومات الموقع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__site_name
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__site_name
+msgid "Site Name"
+msgstr "اسم الموقع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__site_no
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__site_no
+msgid "Site No."
+msgstr "رقم الموقع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__signature_supervisor
+msgid "Site Supervisor Signature"
+msgstr "توقيع مشرف الموقع"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__slump_value
+msgid "Slump"
+msgstr "الهبوط"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__slump_value
+msgid "Slump (mm)"
+msgstr "الهبوط (ملم)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__state
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__state
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__state
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__activity_state
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__activity_state
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__activity_state
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__activity_state
+#: model:ir.model.fields,help:concrete_order.field_excel_template__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق مر بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__template_id
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_field_mapping_search
+msgid "Template"
+msgstr "القالب"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__name
+msgid "Template Name"
+msgstr "اسم القالب"
+
+#. module: concrete_order
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_templates
+msgid "Templates"
+msgstr "القوالب"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__name
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__name
+msgid "Ticket No."
+msgstr "رقم التذكرة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Ticket/Serial"
+msgstr "التذكرة/التسلسلي"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__ticket_count
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__ticket_count
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_form
+msgid "Tickets"
+msgstr "التذاكر"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__delivery_time
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__delivery_time
+msgid "Time"
+msgstr "الوقت"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__time_ex_plant
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__time_ex_plant
+msgid "Time Ex-Plant"
+msgstr "وقت الخروج من المصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__time_finish_discharge
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__time_finish_discharge
+msgid "Time Finish Discharge"
+msgstr "وقت انتهاء التفريغ"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__time_on_site
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__time_on_site
+msgid "Time On Site"
+msgstr "الوقت في الموقع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__time_returned_plant
+msgid "Time Returned Plant"
+msgstr "وقت العودة للمصنع"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__time_start_discharge
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__time_start_discharge
+msgid "Time Start Discharge"
+msgstr "وقت بدء التفريغ"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Time Tracking"
+msgstr "تتبع الوقت"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__total_admixtures
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__total_admixtures
+msgid "Total Admixtures"
+msgstr "إجمالي المضافات"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__total_volume_delivered
+msgid "Total Delivered"
+msgstr "إجمالي ما تم توصيله"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__total_volume_delivered
+msgid "Total Delivered this Load"
+msgstr "إجمالي ما تم توصيله في هذه الحمولة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__total_time_taken
+msgid "Total Time (Hours)"
+msgstr "إجمالي الوقت (ساعات)"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_list
+msgid "Total Volume"
+msgstr "إجمالي الحجم"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_concrete_delivery_ticket
+msgid ""
+"Track concrete deliveries with real-time information and automated "
+"workflows."
+msgstr ""
+"تتبع عمليات توصيل الخرسانة بمعلومات فورية وسير عمل مؤتمت."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__trailer_plate
+msgid "Trailer Plate"
+msgstr "لوحة المقطورة"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle_model__vehicle_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__activity_exception_decoration
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__activity_exception_decoration
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__activity_exception_decoration
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__activity_exception_decoration
+#: model:ir.model.fields,help:concrete_order.field_excel_template__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__product_uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: concrete_order
+#: model_terms:ir.actions.act_window,help:concrete_order.action_excel_template
+msgid "Upload templates and configure field mappings."
+msgstr "رفع القوالب وتهيئة تعيينات الحقول."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__vehicle_id
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__name
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_form
+msgid "Vehicle"
+msgstr "المركبة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Vehicle & Driver"
+msgstr "المركبة والسائق"
+
+#. module: concrete_order
+#: model:ir.actions.act_window,name:concrete_order.action_concrete_vehicle_brand
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_vehicle_brand
+msgid "Vehicle Brands"
+msgstr "ماركات المركبات"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__vehicle_capacity
+msgid "Vehicle Capacity"
+msgstr "سعة المركبة"
+
+#. module: concrete_order
+#: model:ir.actions.act_window,name:concrete_order.action_concrete_vehicle_model
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_vehicle_model
+msgid "Vehicle Models"
+msgstr "موديلات المركبات"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__vehicle_plate
+msgid "Vehicle Plate"
+msgstr "لوحة المركبة"
+
+#. module: concrete_order
+#: model:ir.actions.act_window,name:concrete_order.action_concrete_vehicle
+#: model:ir.ui.menu,name:concrete_order.menu_concrete_vehicle
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "Vehicles"
+msgstr "المركبات"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Volume"
+msgstr "الحجم"
+
+#. module: concrete_order
+#: model:ir.model.fields.selection,name:concrete_order.selection__excel_field_mapping__field_name__volume_m3
+msgid "Volume (C.U.M)"
+msgstr "الحجم (متر مكعب)"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__volume_m3
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_form
+msgid "Volume (M³)"
+msgstr "الحجم (م³)"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_delivery_ticket.py:0
+msgid "Volume must be greater than zero."
+msgstr "يجب أن يكون الحجم أكبر من صفر."
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_delivery_ticket__water_added
+msgid "Water Added Note"
+msgstr "ملاحظة الماء المضاف"
+
+#. module: concrete_order
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_driver__website_message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_concrete_vehicle__website_message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_field_mapping__website_message_ids
+#: model:ir.model.fields,field_description:concrete_order.field_excel_template__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: concrete_order
+#: model:ir.model.fields,help:concrete_order.field_concrete_delivery_ticket__website_message_ids
+#: model:ir.model.fields,help:concrete_order.field_concrete_driver__website_message_ids
+#: model:ir.model.fields,help:concrete_order.field_concrete_vehicle__website_message_ids
+#: model:ir.model.fields,help:concrete_order.field_excel_field_mapping__website_message_ids
+#: model:ir.model.fields,help:concrete_order.field_excel_template__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ تواصل الموقع الإلكتروني"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+msgid "Week"
+msgstr "الأسبوع"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_search
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_search
+msgid "With Document"
+msgstr "مع مستند"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_search
+msgid "With Pump"
+msgstr "مع مضخة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_excel_template_search
+msgid "Without Document"
+msgstr "بدون مستند"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_driver.py:0
+msgid "driver_id"
+msgstr "معرف السائق"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_vehicle_form
+msgid "e.g., ABC-1234"
+msgstr "مثل ABC-1234"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_driver_form
+msgid "e.g., John Doe"
+msgstr "مثل John Doe"
+
+#. module: concrete_order
+#. odoo-python
+#: code:addons/concrete_order/models/concrete_vehicle.py:0
+msgid "vehicle_id"
+msgstr "معرف المركبة"
+
+#. module: concrete_order
+#: model_terms:ir.ui.view,arch_db:concrete_order.view_concrete_delivery_ticket_kanban
+msgid "| <i class="fa fa-user" title="Driver"/>"
+msgstr "| <i class="fa fa-user" title="السائق"/>"

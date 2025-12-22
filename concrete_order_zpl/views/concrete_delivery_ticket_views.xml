@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_concrete_delivery_ticket_zpl_form" model="ir.ui.view">
+        <field name="name">concrete.delivery.ticket.zpl.form</field>
+        <field name="model">concrete.delivery.ticket</field>
+        <field name="inherit_id" ref="concrete_order.view_concrete_delivery_ticket_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="printer_id"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="action_print_barcode" string="Print Barcode" type="object" 
+                        class="btn-secondary" icon="fa-barcode" invisible="not printer_id or state not in ['draft', 'confirmed']"/>
+                <button name="action_print_label" string="Print Label" type="object" 
+                        class="btn-secondary" icon="fa-tag" invisible="not printer_id or state != 'in_transit'"/>
+                <button name="action_print_ticket" string="Print Ticket" type="object" 
+                        class="btn-primary" icon="fa-print" invisible="not printer_id or state not in ['delivered', 'done']"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

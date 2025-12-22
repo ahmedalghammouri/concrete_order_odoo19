@@ -1,0 +1,435 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * concrete_order_cmdp
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-22 01:24+0000\n"
+"PO-Revision-Date: 2025-12-22 01:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "(OVERDUE)"
+msgstr "(متأخر)"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Avg Delivery Time"
+msgstr "متوسط وقت التوصيل"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_ticket__barcode
+msgid "Barcode"
+msgstr "الباركود"
+
+#. module: concrete_order_cmdp
+#: model_terms:ir.ui.view,arch_db:concrete_order_cmdp.view_concrete_delivery_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: concrete_order_cmdp
+#: model:ir.ui.menu,name:concrete_order_cmdp.menu_concrete_cmdp_root
+msgid "Concrete Delivery Point"
+msgstr "نقطة توصيل الخرسانة"
+
+#. module: concrete_order_cmdp
+#: model:ir.model,name:concrete_order_cmdp.model_concrete_delivery_ticket
+msgid "Concrete Delivery Ticket"
+msgstr "تذكرة توصيل خرسانة"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+#: model:ir.actions.client,name:concrete_order_cmdp.action_concrete_delivery_cmdp_interface
+msgid "Concrete Mixer Delivery Point"
+msgstr "نقطة توصيل خلاطة الخرسانة"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: concrete_order_cmdp
+#: model_terms:ir.ui.view,arch_db:concrete_order_cmdp.view_concrete_delivery_wizard_form
+msgid "Create Delivery Ticket"
+msgstr "إنشاء تذكرة توصيل"
+
+#. module: concrete_order_cmdp
+#: model:ir.model,name:concrete_order_cmdp.model_concrete_delivery_wizard
+msgid "Create Delivery Ticket Wizard"
+msgstr "معالج إنشاء تذكرة توصيل"
+
+#. module: concrete_order_cmdp
+#: model_terms:ir.ui.view,arch_db:concrete_order_cmdp.view_concrete_delivery_wizard_form
+msgid "Create Ticket"
+msgstr "إنشاء تذكرة"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Customer:"
+msgstr "العميل:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "DO:"
+msgstr "أمر التوصيل:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Deliveries"
+msgstr "عمليات التوصيل"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__delivery_id
+msgid "Delivery Order"
+msgstr "أمر التوصيل"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Delivery Orders"
+msgstr "أوامر التوصيل"
+
+#. module: concrete_order_cmdp
+#: model:ir.ui.menu,name:concrete_order_cmdp.menu_concrete_cmdp_interface
+msgid "Delivery Point Interface"
+msgstr "واجهة نقطة التوصيل"
+
+#. module: concrete_order_cmdp
+#. odoo-python
+#: code:addons/concrete_order_cmdp/models/concrete_delivery_cmdp.py:0
+msgid "Delivery order not found"
+msgstr "أمر التوصيل غير موجود"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_ticket__display_name
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Done"
+msgstr "تم"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__driver_id
+msgid "Driver"
+msgstr "السائق"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Driver:"
+msgstr "السائق:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Est:"
+msgstr "المتوقع:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Fast Delivery Management"
+msgstr "إدارة التوصيل السريع"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Fleet Queue"
+msgstr "طابور الأسطول"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Fleet Queue ("
+msgstr "طابور الأسطول ("
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_ticket__id
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "In Transit"
+msgstr "في الطريق"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Loading dashboard data..."
+msgstr "جاري تحميل بيانات لوحة القيادة..."
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__mix_description
+msgid "Mix Description"
+msgstr "وصف الخلطة"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Mix:"
+msgstr "الخلطة:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "M³"
+msgstr "م³"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "New (F1)"
+msgstr "جديد (F1)"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "No delivery orders"
+msgstr "لا توجد أوامر توصيل"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "No pending deliveries"
+msgstr "لا توجد عمليات توصيل معلقة"
+
+#. module: concrete_order_cmdp
+#. odoo-python
+#: code:addons/concrete_order_cmdp/models/concrete_delivery_cmdp.py:0
+msgid "No pending delivery ticket found with barcode: %s"
+msgstr "لم يتم العثور على تذكرة توصيل معلقة بالباركود: %s"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "No recent activity"
+msgstr "لا يوجد نشاط حديث"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "No vehicles in queue"
+msgstr "لا توجد مركبات في الطابور"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Origin:"
+msgstr "المصدر:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Overview"
+msgstr "نظرة عامة"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Pending Deliveries"
+msgstr "عمليات التوصيل المعلقة"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Recent Activity"
+msgstr "النشاط الحديث"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__sale_order_id
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__sale_line_id
+msgid "Sale Order Line"
+msgstr "بند أمر البيع"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Scan"
+msgstr "مسح"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Scan or enter barcode / ticket number..."
+msgstr "امسح أو أدخل الباركود / رقم التذكرة..."
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Scheduled:"
+msgstr "المجدول:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Site:"
+msgstr "الموقع:"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__location_id
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Status:"
+msgstr "الحالة:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Today's Deliveries"
+msgstr "عمليات توصيل اليوم"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Total Volume Today"
+msgstr "إجمالي الحجم اليوم"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "URGENT"
+msgstr "عاجل"
+
+#. module: concrete_order_cmdp
+#: model:ir.model.fields,field_description:concrete_order_cmdp.field_concrete_delivery_wizard__vehicle_id
+msgid "Vehicle"
+msgstr "المركبة"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Vehicle:"
+msgstr "المركبة:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Volume:"
+msgstr "الحجم:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "Waiting:"
+msgstr "الانتظار:"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "completed"
+msgstr "مكتمل"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "in progress"
+msgstr "قيد التنفيذ"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "tickets"
+msgstr "تذاكر"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "vehicles)"
+msgstr "مركبات)"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "waiting"
+msgstr "انتظار"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "📦 Delivery Orders"
+msgstr "📦 أوامر التوصيل"
+
+#. module: concrete_order_cmdp
+#. odoo-javascript
+#: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
+msgid "🚚 Pending Deliveries"
+msgstr "🚚 عمليات التوصيل المعلقة"
