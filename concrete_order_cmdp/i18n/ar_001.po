@@ -57,7 +57,7 @@ msgstr "تذكرة توصيل خرسانة"
 #: code:addons/concrete_order_cmdp/static/src/xml/concrete_delivery_cmdp.xml:0
 #: model:ir.actions.client,name:concrete_order_cmdp.action_concrete_delivery_cmdp_interface
 msgid "Concrete Mixer Delivery Point"
-msgstr "نقطة توصيل خلاطة الخرسانة"
+msgstr "نقطة توصيل الخرسانة"
 
 #. module: concrete_order_cmdp
 #. odoo-javascript

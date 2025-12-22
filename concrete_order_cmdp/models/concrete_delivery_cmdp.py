@@ -56,6 +56,17 @@ class ConcreteDeliveryTicket(models.Model):
         
         result = []
         for picking in pickings:
+            # Filter out pickings with weighable products
+            has_non_weighable = False
+            for move in picking.move_ids:
+                if move.product_id and not move.product_id.is_weighable:
+                    has_non_weighable = True
+                    break
+            
+            # Skip this picking if it doesn't have non-weighable products
+            if not has_non_weighable:
+                continue
+            
             ticket = self.search([('delivery_id', '=', picking.id), ('state', '!=', 'cancel')], limit=1)
             
             # Determine status
